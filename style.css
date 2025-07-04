@@ -1,4 +1,3 @@
-/* ✅ Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
@@ -10,16 +9,14 @@ body {
   padding: 0;
 }
 
-/* 🌐 Sticky Navbar Styling */
+/* Sticky Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #007BFF;
   padding: 20px 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   flex-wrap: wrap;
-
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -34,7 +31,6 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   margin: 0;
   padding: 0;
@@ -52,7 +48,6 @@ body {
   color: #ffdd57;
 }
 
-/* Section Styling */
 section {
   background: #ffffff;
   margin: 30px auto;
@@ -72,7 +67,6 @@ p {
   line-height: 1.6;
 }
 
-/* Footer Styling */
 footer {
   background-color: #f0f0f0;
   padding: 15px;
