@@ -1,2 +1,6 @@
-document.getElementById("air-data").innerText = "AQI: 45 (Good)";
-document.getElementById("water-data").innerText = "WQI: 78 (Moderate)";
+function showSection(sectionId) {
+  const sections = document.querySelectorAll(".content-section");
+  sections.forEach(section => {
+    section.style.display = section.id === sectionId ? "block" : "none";
+  });
+}
