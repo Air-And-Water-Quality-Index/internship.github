@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Home - Air & Water Quality Monitor</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Air & Water Quality Monitor</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Header / Navbar -->
   <header>
     <nav class="navbar">
       <h1>Air & Water Quality Monitor</h1>
@@ -21,25 +23,66 @@
     </nav>
   </header>
 
+  <!-- Introduction -->
   <section>
-    <h2>Welcome</h2>
-    <p>This dashboard shows real-time Air and Water Quality data to help users stay informed and safe.</p>
+    <h2>Introduction</h2>
+    <p>
+      The quality of air and water plays a crucial role in maintaining a healthy environment and safeguarding public health.
+      As pollution levels rise due to urbanization and industrial activities, it becomes essential to monitor and evaluate these resources regularly.
+      The Air Quality Index (AQI) and Water Quality Index (WQI) are scientific tools used to assess the cleanliness and safety of air and water,
+      making the data understandable and actionable for the public and authorities.
+    </p>
   </section>
 
-  <section id="air">
+  <!-- AQI Section -->
+  <section>
     <h2>Air Quality Index (AQI)</h2>
-    <p id="air-data">Loading...</p>
+    <p>
+      The AQI measures the concentration of major air pollutants such as PM2.5, PM10, ozone (O₃), nitrogen dioxide (NO₂),
+      sulfur dioxide (SO₂), and carbon monoxide (CO). Based on these pollutants, the AQI categorizes the air as:
+    </p>
+    <ul>
+      <li><strong>Good (0–50):</strong> Air is clean and healthy.</li>
+      <li><strong>Moderate (51–100):</strong> Acceptable, but may pose a risk for some.</li>
+      <li><strong>Unhealthy (101–200+):</strong> Dangerous for sensitive groups and the general public.</li>
+    </ul>
+    <p>
+      AQI helps citizens understand when to limit outdoor activities and helps governments take necessary action to reduce emissions.
+    </p>
   </section>
 
-  <section id="water">
+  <!-- WQI Section -->
+  <section>
     <h2>Water Quality Index (WQI)</h2>
-    <p id="water-data">Loading...</p>
+    <p>
+      WQI is used to assess the overall quality of water bodies like rivers, lakes, and reservoirs.
+      It takes into account parameters such as pH, dissolved oxygen (DO), turbidity, temperature, nitrates, and biological content.
+      WQI ratings can be:
+    </p>
+    <ul>
+      <li><strong>Excellent (0–25):</strong> Safe for drinking and aquatic life.</li>
+      <li><strong>Good (26–50):</strong> Suitable for domestic and recreational use.</li>
+      <li><strong>Poor (50+):</strong> Contaminated, and may be unsafe for use.</li>
+    </ul>
+    <p>
+      Monitoring WQI helps ensure water is safe for drinking, agriculture, and aquatic ecosystems.
+    </p>
   </section>
 
+  <!-- Conclusion -->
+  <section>
+    <h2>Conclusion</h2>
+    <p>
+      Air and water quality indices are vital tools that translate complex environmental data into simple, understandable information.
+      By tracking AQI and WQI, individuals, communities, and governments can take informed steps to reduce pollution and protect natural resources.
+      A cleaner environment begins with awareness — and these indices are a step forward in promoting sustainable living.
+    </p>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>Environment Monitoring Project © 2025</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
