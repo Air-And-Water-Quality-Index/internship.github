@@ -1,23 +1,50 @@
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #f5faff;
+  background: linear-gradient(to bottom right, #d0eaff, #ffffff);
+  scroll-behavior: smooth;
 }
 
+h1, h2 {
+  color: #003366;
+}
+
+p, li {
+  color: #333;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Navbar */
 .navbar {
-  background-color: #007BFF;
-  padding: 1rem;
+  background-color: #004aad;
+  padding: 15px 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 0;
-  padding: 0;
 }
 
 .navbar li {
@@ -25,72 +52,35 @@ body {
 }
 
 .navbar a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
 
-.navbar a.active,
-.navbar a:hover {
-  text-decoration: underline;
+.navbar a:hover,
+.navbar a.active {
+  background-color: #003377;
 }
 
-.hero {
-  background: linear-gradient(to right, #007BFF, #00bfff);
-  color: white;
-  text-align: center;
-  padding: 50px 20px;
+/* Sensor Images */
+.sensor-img {
+  width: 250px;
+  max-width: 90%;
+  margin: 15px 0;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.section {
-  max-width: 900px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.section h2,
-.section h3 {
-  color: #007BFF;
-}
-
+/* Footer */
 .footer {
   background-color: #f0f0f0;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   color: #555;
   margin-top: 50px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-form input {
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-form button {
-  padding: 10px;
-  background: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: #0056b3;
+  font-size: 14px;
 }
