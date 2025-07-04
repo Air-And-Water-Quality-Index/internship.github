@@ -1,142 +1,107 @@
-/* Reset & Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Reset and base styles */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #e6f0ff, #ffffff);
-  line-height: 1.6;
-  color: #333;
-  scroll-behavior: smooth;
+  background: linear-gradient(to bottom right, #eef6ff, #ffffff);
+  margin: 0;
+  padding: 0;
 }
 
-/* Navbar */
+h1, h2 {
+  color: #003366;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Sticky Navbar */
 .navbar {
-  background-color: #004080;
-  padding: 15px 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: #004a99;
+  overflow: hidden;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 }
 
-.navbar ul li {
-  margin: 0 15px;
+.navbar li {
+  display: inline;
 }
 
-.navbar ul li a {
-  color: #fff;
+.navbar a {
+  display: inline-block;
+  color: white;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-  padding: 8px 14px;
-  border-radius: 5px;
+  padding: 14px 20px;
   transition: background 0.3s ease;
 }
 
-.navbar ul li a:hover,
-.navbar ul li a.active {
-  background: #0066cc;
+.navbar a:hover,
+.navbar a.active {
+  background-color: #0066cc;
 }
 
-/* Hero Section */
-.hero {
-  background: #cce6ff;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 36px;
-  color: #003366;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 18px;
-  color: #333;
-}
-
-/* Main Content Sections */
+/* Section styling */
 .section {
-  padding: 50px 20px;
+  background: #ffffff;
+  margin: 30px auto;
+  padding: 25px;
   max-width: 900px;
-  margin: auto;
-  background: #fff;
-  margin-top: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.section h2 {
-  font-size: 28px;
-  color: #004080;
-  margin-bottom: 15px;
-}
-
-.section p,
-.section ul {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: opacity 1s ease-in;
 }
 
 .section ul li {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
 }
 
-/* Footer */
+.section img {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+/* Footer (if needed later) */
 footer {
-  background: #f1f1f1;
   text-align: center;
   padding: 20px;
-  font-size: 15px;
+  background: #f3f3f3;
   color: #555;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
-/* Fade-in Animation */
+/* Animations */
 .fade-in {
-  animation: fadeInUp 1s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+@keyframes fadeIn {
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+/* Responsive tweaks */
+@media (max-width: 768px) {
   .navbar ul {
     flex-direction: column;
-    align-items: center;
   }
 
-  .navbar ul li {
-    margin: 10px 0;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .section {
-    padding: 30px 15px;
+  .navbar a {
+    text-align: center;
+    padding: 12px;
   }
 }
