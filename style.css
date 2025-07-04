@@ -1,23 +1,42 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #d0eaff, #ffffff);
   margin: 0;
   padding: 0;
-  background: #f0f8ff;
 }
+
 header {
   background: #007BFF;
   color: white;
-  padding: 1rem;
+  padding: 30px;
   text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+
 section {
-  margin: 20px;
+  background: #ffffff;
+  margin: 30px auto;
   padding: 20px;
-  background: white;
-  border-radius: 10px;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+h2 {
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  color: #444;
+}
+
 footer {
+  background-color: #f0f0f0;
+  padding: 15px;
   text-align: center;
-  padding: 10px;
-  background: #eee;
+  color: #555;
+  margin-top: 40px;
 }
