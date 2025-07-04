@@ -1,17 +1,15 @@
-/* General Styles */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #d0eaff, #ffffff);
   margin: 0;
   padding: 0;
-  line-height: 1.6;
 }
 
 /* Header and Navbar */
 header {
   background: #007BFF;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -28,33 +26,33 @@ header {
 }
 
 .navbar h1 {
-  font-size: 22px;
-  margin: 10px 0;
+  font-size: 20px;
+  margin: 0;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 15px;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-.nav-links a {
+.nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  padding: 8px 12px;
+  padding: 6px 10px;
   transition: background 0.3s;
   border-radius: 4px;
 }
 
-.nav-links a:hover {
+.nav-links li a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Section Styling */
-section {
+/* Sections */
+.content-section {
   background: #ffffff;
   margin: 30px auto;
   padding: 25px 30px;
@@ -68,21 +66,14 @@ h2 {
   margin-bottom: 10px;
 }
 
-p {
+p, ul li {
   font-size: 17px;
   color: #333;
-  margin-bottom: 15px;
 }
 
 ul {
-  padding-left: 20px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-ul li {
-  font-size: 16px;
-  color: #444;
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
 
 /* Footer */
@@ -91,6 +82,6 @@ footer {
   padding: 15px;
   text-align: center;
   color: #555;
-  margin-top: 40px;
   font-size: 15px;
+  margin-top: 40px;
 }
