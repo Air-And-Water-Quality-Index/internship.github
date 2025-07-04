@@ -6,59 +6,53 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="thingspeak.html">ThingSpeak</a></li>
+        <li><a href="testcases.html">Test Cases</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="thingspeak.html">ThingSpeak</a></li>
-      <li><a href="testcases.html">Test Cases</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="signin.html">Sign In</a></li>
-    </ul>
-  </nav>
-
-  <!-- About Page Header -->
   <section class="section">
     <h2>About the Project</h2>
     <p>This project combines hardware and software to monitor environmental quality in real-time.</p>
   </section>
 
-  <!-- Hardware Section -->
   <section class="section">
-    <h2>🔌 Hardware Components</h2>
+    <h2>🔧 Hardware Components</h2>
     <ul>
-      <li><strong>MQ135 Gas Sensor</strong>: Detects harmful gases and pollutants in the air.</li>
-      <img src="images/mq135.jpg" alt="MQ135 Sensor" class="sensor-img">
+      <li><strong>MQ135 Gas Sensor:</strong> Detects harmful gases and pollutants in the air.</li>
+      <img src="images/mq135.jpg" alt="MQ135 Sensor" width="300">
 
-      <li><strong>DHT11 Sensor</strong>: Measures temperature and humidity levels.</li>
-      <img src="images/dht11.jpg" alt="DHT11 Sensor" class="sensor-img">
+      <li><strong>DHT11 Sensor:</strong> Measures temperature and humidity levels.</li>
+      <img src="images/dht11.jpg" alt="DHT11 Sensor" width="300">
 
-      <li><strong>Turbidity Sensor</strong>: Checks the clarity of water to determine its quality.</li>
-      <img src="images/turbidity.jpg" alt="Turbidity Sensor" class="sensor-img">
+      <li><strong>Turbidity Sensor:</strong> Checks the clarity of water to determine its quality.</li>
+      <img src="images/turbidity.jpg" alt="Turbidity Sensor" width="300">
 
-      <li><strong>NodeMCU (ESP8266)</strong>: Transmits data to the cloud (ThingSpeak).</li>
-      <img src="images/nodemcu.jpg" alt="NodeMCU Board" class="sensor-img">
+      <li><strong>NodeMCU (ESP8266):</strong> Transmits data to the cloud (ThingSpeak).</li>
     </ul>
   </section>
 
-  <!-- Software Section -->
   <section class="section">
     <h2>💻 Software Used</h2>
     <ul>
-      <li><strong>Arduino IDE</strong>: Programming the sensors and NodeMCU.</li>
-      <li><strong>ThingSpeak</strong>: Cloud platform for data visualization.</li>
-      <li><strong>HTML/CSS/JavaScript</strong>: Frontend website design.</li>
-      <li><strong>GitHub</strong>: Hosting and version control of the website.</li>
+      <li>Arduino IDE – For programming sensors and NodeMCU</li>
+      <li>ThingSpeak – For real-time cloud data visualization</li>
+      <li>HTML/CSS/JS – For creating the user interface</li>
+      <li>GitHub – For version control and hosting the website</li>
     </ul>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 AQI & WQI Monitoring</p>
+  <footer>
+    <p>&copy; 2025 AQI & WQI Monitoring</p>
   </footer>
-
 </body>
 </html>
