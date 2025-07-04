@@ -1,9 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Team</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .team-card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .team-card h3 {
+      margin: 10px 0 5px;
+      font-size: 20px;
+      color: #004a99;
+    }
+
+    .team-card p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .navbar a.active {
+      background-color: #0066cc;
+    }
+  </style>
 </head>
 <body>
 
@@ -11,23 +49,43 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="team.html" class="active">Team</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
+      <li><a href="team.html" class="active">Team</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="signin.html">Sign In</a></li>
     </ul>
   </nav>
 
   <section class="section fade-in">
-    <h2>Our Team</h2>
-    <ul>
-      <li><strong>Aishwarya Nagula</strong></li>
-      <li><strong>Neha Karimilla</strong></li>
-      <li><strong>Vaishnavi Thumma</strong></li>
-      <li><strong>Poornima</strong></li>
-      <li><strong>Teja Harshini</strong></li>
-    </ul>
+    <h2 style="text-align:center; margin-bottom: 30px;">Meet Our Team</h2>
+    <div class="team-container">
+      <div class="team-card">
+        <h3>Aishwarya Nagula</h3>
+        <p>Email: aishwarya@example.com</p>
+        <p>LinkedIn: linkedin.com/in/aishwarya</p>
+      </div>
+      <div class="team-card">
+        <h3>Neha Karimilla</h3>
+        <p>Email: neha@example.com</p>
+        <p>LinkedIn: linkedin.com/in/neha</p>
+      </div>
+      <div class="team-card">
+        <h3>Vaishnavi Thumma</h3>
+        <p>Email: vaishnavi@example.com</p>
+        <p>LinkedIn: linkedin.com/in/vaishnavi</p>
+      </div>
+      <div class="team-card">
+        <h3>Poornima</h3>
+        <p>Email: poornima@example.com</p>
+        <p>LinkedIn: linkedin.com/in/poornima</p>
+      </div>
+      <div class="team-card">
+        <h3>Teja Harshini</h3>
+        <p>Email: teja@example.com</p>
+        <p>LinkedIn: linkedin.com/in/teja</p>
+      </div>
+    </div>
   </section>
 
 </body>
