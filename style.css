@@ -1,3 +1,8 @@
+/* ✅ Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #d0eaff, #ffffff);
@@ -5,7 +10,7 @@ body {
   padding: 0;
 }
 
-/* 🌐 Navbar Styling */
+/* 🌐 Sticky Navbar Styling */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -14,6 +19,10 @@ body {
   padding: 20px 40px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   flex-wrap: wrap;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar h1 {
@@ -60,6 +69,7 @@ h2 {
 p {
   font-size: 18px;
   color: #444;
+  line-height: 1.6;
 }
 
 /* Footer Styling */
