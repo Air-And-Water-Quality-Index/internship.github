@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ThingSpeak | AQI & WQI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="thingspeak.html" class="active">ThingSpeak</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <section class="section">
+    <h2>Live Sensor Data</h2>
+    <p>Below are the live graphs of sensor readings pulled from ThingSpeak:</p>
+
+    <!-- Replace with your own ThingSpeak channel if needed -->
+    <iframe width="450" height="260" style="border:1px solid #ccc;" src="https://thingspeak.com/channels/YOUR_CHANNEL_ID/charts/1"></iframe>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 AQI & WQI Monitoring</p>
+  </footer>
+</body>
+</html>
