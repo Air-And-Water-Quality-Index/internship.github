@@ -4,3 +4,8 @@ function showSection(sectionId) {
     section.style.display = section.id === sectionId ? "block" : "none";
   });
 }
+
+// Hide all sections on first load
+window.onload = () => {
+  showSection(null);
+};
