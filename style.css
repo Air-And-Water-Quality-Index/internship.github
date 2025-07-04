@@ -33,6 +33,15 @@ p {
   color: #444;
 }
 
+/* 🌍 Specific Styling for the Introduction Section */
+#introduction {
+  text-align: center;
+}
+
+#introduction p {
+  line-height: 1.6;
+}
+
 footer {
   background-color: #f0f0f0;
   padding: 15px;
