@@ -5,6 +5,13 @@
   <title>Sign In - Air & Water Quality Monitor</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+    }
+
     .signin-container {
       max-width: 400px;
       margin: 80px auto;
@@ -12,6 +19,12 @@
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .signin-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
     }
 
     input {
@@ -37,17 +50,30 @@
     button:hover {
       background-color: #0056b3;
     }
+
+    .back-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .back-link a {
+      color: #007BFF;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
   <div class="signin-container">
     <h2>Sign In</h2>
     <form>
-      <input type="text" placeholder="Username" required>
+      <input type="text" placeholder="Full Name" required>
       <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Create Password" required>
       <button type="submit">Create Account</button>
     </form>
+    <div class="back-link">
+      <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
   </div>
 </body>
 </html>
