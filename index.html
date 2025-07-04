@@ -1,88 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Air & Water Quality Monitor</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Air & Water Quality Monitoring</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header / Navbar -->
+  <!-- Navbar -->
   <header>
-    <nav class="navbar">
-      <h1>Air & Water Quality Monitor</h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="signin.html">Sign In</a></li>
+    <nav>
+      <ul class="navbar">
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('about')">About</a></li>
+        <li><a href="#" onclick="showSection('services')">Services</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        <li id="login-link"><a href="#" onclick="showSection('login')">Login</a></li>
+        <li id="signin-link"><a href="#" onclick="showSection('signin')">Sign In</a></li>
+        <li id="user-greeting" style="display: none;">Welcome, <span id="username-display"></span> | <a href="#" onclick="logout()">Logout</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Introduction -->
-  <section>
-    <h2>Introduction</h2>
-    <p>
-      The quality of air and water plays a crucial role in maintaining a healthy environment and safeguarding public health.
-      As pollution levels rise due to urbanization and industrial activities, it becomes essential to monitor and evaluate these resources regularly.
-      The Air Quality Index (AQI) and Water Quality Index (WQI) are scientific tools used to assess the cleanliness and safety of air and water,
-      making the data understandable and actionable for the public and authorities.
-    </p>
-  </section>
+  <!-- Sections -->
+  <main>
+    <section id="home" class="content-section">
+      <h2>Introduction</h2>
+      <p>The quality of air and water plays a crucial role in maintaining a healthy environment and safeguarding public health. As pollution levels rise due to urbanization and industrial activities, it becomes essential to monitor and evaluate these resources regularly.</p>
+    </section>
 
-  <!-- AQI Section -->
-  <section>
-    <h2>Air Quality Index (AQI)</h2>
-    <p>
-      The AQI measures the concentration of major air pollutants such as PM2.5, PM10, ozone (O₃), nitrogen dioxide (NO₂),
-      sulfur dioxide (SO₂), and carbon monoxide (CO). Based on these pollutants, the AQI categorizes the air as:
-    </p>
-    <ul>
-      <li><strong>Good (0–50):</strong> Air is clean and healthy.</li>
-      <li><strong>Moderate (51–100):</strong> Acceptable, but may pose a risk for some.</li>
-      <li><strong>Unhealthy (101–200+):</strong> Dangerous for sensitive groups and the general public.</li>
-    </ul>
-    <p>
-      AQI helps citizens understand when to limit outdoor activities and helps governments take necessary action to reduce emissions.
-    </p>
-  </section>
+    <section id="about" class="content-section" style="display: none;">
+      <h2>Air and Water Quality Index</h2>
+      <p><strong>AQI</strong> monitors pollutants like PM2.5, PM10, ozone, NO₂, SO₂, and CO. It categorizes air quality as Good (0–50), Moderate (51–100), or Unhealthy (101+).</p>
+      <p><strong>WQI</strong> assesses pH, dissolved oxygen, turbidity, temperature, and biological content. It’s rated as Excellent (0–25), Good (26–50), or Poor (50+).</p>
+    </section>
 
-  <!-- WQI Section -->
-  <section>
-    <h2>Water Quality Index (WQI)</h2>
-    <p>
-      WQI is used to assess the overall quality of water bodies like rivers, lakes, and reservoirs.
-      It takes into account parameters such as pH, dissolved oxygen (DO), turbidity, temperature, nitrates, and biological content.
-      WQI ratings can be:
-    </p>
-    <ul>
-      <li><strong>Excellent (0–25):</strong> Safe for drinking and aquatic life.</li>
-      <li><strong>Good (26–50):</strong> Suitable for domestic and recreational use.</li>
-      <li><strong>Poor (50+):</strong> Contaminated, and may be unsafe for use.</li>
-    </ul>
-    <p>
-      Monitoring WQI helps ensure water is safe for drinking, agriculture, and aquatic ecosystems.
-    </p>
-  </section>
+    <section id="services" class="content-section" style="display: none;">
+      <h2>Services</h2>
+      <p>We provide environmental monitoring tools, AQI/WQI alerts, and community pollution awareness campaigns.</p>
+    </section>
 
-  <!-- Conclusion -->
-  <section>
-    <h2>Conclusion</h2>
-    <p>
-      Air and water quality indices are vital tools that translate complex environmental data into simple, understandable information.
-      By tracking AQI and WQI, individuals, communities, and governments can take informed steps to reduce pollution and protect natural resources.
-      A cleaner environment begins with awareness — and these indices are a step forward in promoting sustainable living.
-    </p>
-  </section>
+    <section id="contact" class="content-section" style="display: none;">
+      <h2>Contact Us</h2>
+      <p>Email: support@envmonitor.com<br>Phone: +123-456-7890</p>
+    </section>
 
-  <!-- Footer -->
+    <section id="login" class="content-section" style="display: none;">
+      <h2>Login</h2>
+      <form onsubmit="return handleLogin(event)">
+        <input type="email" id="loginEmail" placeholder="Email" required /><br />
+        <input type="password" id="loginPassword" placeholder="Password" required /><br />
+        <button type="submit">Login</button>
+        <p id="loginMessage" style="color: red;"></p>
+      </form>
+    </section>
+
+    <section id="signin" class="content-section" style="display: none;">
+      <h2>Sign In</h2>
+      <form onsubmit="return handleSignup(event)">
+        <input type="text" id="signupName" placeholder="Full Name" required /><br />
+        <input type="email" id="signupEmail" placeholder="Email" required /><br />
+        <input type="password" id="signupPassword" placeholder="Create Password" required /><br />
+        <button type="submit">Sign Up</button>
+        <p id="signupMessage" style="color: green;"></p>
+      </form>
+    </section>
+  </main>
+
   <footer>
-    <p>Environment Monitoring Project © 2025</p>
+    <p>© 2025 Environment Monitoring Project</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
