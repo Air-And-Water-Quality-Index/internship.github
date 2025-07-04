@@ -2,93 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sign In - Air & Water Quality Monitor</title>
+  <title>Sign In</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f4f8;
-      margin: 0;
-      padding: 0;
-    }
-
-    .signin-container {
-      max-width: 400px;
-      margin: 80px auto;
-      padding: 30px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .signin-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 15px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .back-link {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .back-link a {
-      color: #007BFF;
-      text-decoration: none;
-    }
-  </style>
 </head>
 <body>
-  <div class="signin-container">
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="thingspeak.html">ThingSpeak</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signin.html" class="active">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <form>
     <h2>Sign In</h2>
-    <form onsubmit="handleSignUp(event)">
-      <input type="text" placeholder="Full Name" id="name" required>
-      <input type="email" placeholder="Email" id="email" required>
-      <input type="password" placeholder="Create Password" id="password" required>
-      <button type="submit">Create Account</button>
-    </form>
-    <div class="back-link">
-      <p>Already have an account? <a href="login.html">Login here</a></p>
-    </div>
-  </div>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit">Create Account</button>
+  </form>
 
-  <script>
-    function handleSignUp(event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      const user = { name, email, password };
-      localStorage.setItem("user", JSON.stringify(user));
-
-      alert("Account created successfully! You can now log in.");
-      window.location.href = "login.html";
-    }
-  </script>
+  <footer class="footer">
+    <p>© 2025 AQI & WQI Monitoring</p>
+  </footer>
 </body>
 </html>
