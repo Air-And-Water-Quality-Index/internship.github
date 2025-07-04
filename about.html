@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Us</title>
+  <title>About | Air & Water Quality Monitor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -19,14 +20,42 @@
     </ul>
   </nav>
 
+  <!-- About Page Header -->
   <section class="section">
-    <h2>About Our Project</h2>
-    <p>
-      This project focuses on monitoring air and water quality using sensors like DHT11, MQ gas sensors, and turbidity sensors.
-      It aims to visualize real-time data and raise awareness about environmental pollution.
-    </p>
+    <h2>About the Project</h2>
+    <p>This project combines hardware and software to monitor environmental quality in real-time.</p>
   </section>
 
+  <!-- Hardware Section -->
+  <section class="section">
+    <h2>🔌 Hardware Components</h2>
+    <ul>
+      <li><strong>MQ135 Gas Sensor</strong>: Detects harmful gases and pollutants in the air.</li>
+      <img src="images/mq135.jpg" alt="MQ135 Sensor" class="sensor-img">
+
+      <li><strong>DHT11 Sensor</strong>: Measures temperature and humidity levels.</li>
+      <img src="images/dht11.jpg" alt="DHT11 Sensor" class="sensor-img">
+
+      <li><strong>Turbidity Sensor</strong>: Checks the clarity of water to determine its quality.</li>
+      <img src="images/turbidity.jpg" alt="Turbidity Sensor" class="sensor-img">
+
+      <li><strong>NodeMCU (ESP8266)</strong>: Transmits data to the cloud (ThingSpeak).</li>
+      <img src="images/nodemcu.jpg" alt="NodeMCU Board" class="sensor-img">
+    </ul>
+  </section>
+
+  <!-- Software Section -->
+  <section class="section">
+    <h2>💻 Software Used</h2>
+    <ul>
+      <li><strong>Arduino IDE</strong>: Programming the sensors and NodeMCU.</li>
+      <li><strong>ThingSpeak</strong>: Cloud platform for data visualization.</li>
+      <li><strong>HTML/CSS/JavaScript</strong>: Frontend website design.</li>
+      <li><strong>GitHub</strong>: Hosting and version control of the website.</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <p>© 2025 AQI & WQI Monitoring</p>
   </footer>
