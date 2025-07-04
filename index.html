@@ -2,30 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Air & Water Quality Monitor</title>
+  <title>Air & Water Quality Monitoring</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar">
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a class="active" href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="thingspeak.html">Thingspeak</a></li>
+      <li><a href="demo.html">Demo</a></li>
       <li><a href="team.html">Team</a></li>
-      <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="signin.html">Sign In</a></li>
     </ul>
   </nav>
 
-  <section class="section">
-    <h1>Welcome to Air & Water Quality Monitoring System</h1>
-    <p>This platform tracks and displays real-time data on air and water quality using sensors.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Air & Water Quality Monitoring</h1>
+    <p>A project to ensure a cleaner and healthier environment using smart sensing and cloud technology.</p>
   </section>
 
-  <footer class="footer">
-    <p>© 2025 AQI & WQI Monitoring</p>
+  <!-- Main Content -->
+  <section class="section fade-in" id="home">
+    <h2>Problem Statement</h2>
+    <p><strong>Air and water quality index and environment monitoring</strong><br>
+    With growing urbanization, pollution in air and water is increasing rapidly. It is crucial to monitor the quality of both resources to ensure environmental sustainability and protect human health.</p>
+
+    <h2>Solution</h2>
+    <p>As a part of our solution, we prepared a prototype using sensors like <strong>DHT11</strong>, <strong>Turbidity sensor</strong>, and <strong>MQ2</strong> to measure temperature, humidity, water turbidity, and gas concentration levels. These readings are collected using Arduino and ESP8266 microcontrollers and pushed to the cloud using <strong>ThingSpeak</strong> for live data visualization and monitoring.</p>
+
+    <h2>Uniqueness</h2>
+    <ul>
+      <li>Combines air and water monitoring in one solution.</li>
+      <li>Live data streaming to ThingSpeak cloud for real-time access.</li>
+      <li>Uses affordable and easily available sensors.</li>
+      <li>Designed as a low-cost, scalable environmental monitoring system.</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Air & Water Quality Monitoring Team</p>
   </footer>
 
 </body>
