@@ -8,81 +8,59 @@
 </head>
 <body>
 
-  <!-- Header / Navbar -->
+  <!-- Header / Navigation -->
   <header>
     <nav class="navbar">
       <h1>Air & Water Quality Monitor</h1>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="signin.html">Sign In</a></li>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('aqi')">AQI</a></li>
+        <li><a href="#" onclick="showSection('wqi')">WQI</a></li>
+        <li><a href="#" onclick="showSection('conclusion')">Conclusion</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Introduction -->
-  <section>
-    <h2>Introduction</h2>
-    <p>
-      The quality of air and water plays a crucial role in maintaining a healthy environment and safeguarding public health.
-      As pollution levels rise due to urbanization and industrial activities, it becomes essential to monitor and evaluate these resources regularly.
-      The Air Quality Index (AQI) and Water Quality Index (WQI) are scientific tools used to assess the cleanliness and safety of air and water,
-      making the data understandable and actionable for the public and authorities.
-    </p>
-  </section>
+  <!-- Sections -->
+  <main>
+    <section id="home" class="content-section">
+      <h2>Introduction</h2>
+      <p>The quality of air and water plays a crucial role in maintaining a healthy environment and safeguarding public health. As pollution levels rise due to urbanization and industrial activities, it becomes essential to monitor and evaluate these resources regularly. The Air Quality Index (AQI) and Water Quality Index (WQI) are scientific tools used to assess the cleanliness and safety of air and water, making the data understandable and actionable for the public and authorities.</p>
+    </section>
 
-  <!-- AQI Section -->
-  <section>
-    <h2>Air Quality Index (AQI)</h2>
-    <p>
-      The AQI measures the concentration of major air pollutants such as PM2.5, PM10, ozone (O₃), nitrogen dioxide (NO₂),
-      sulfur dioxide (SO₂), and carbon monoxide (CO). Based on these pollutants, the AQI categorizes the air as:
-    </p>
-    <ul>
-      <li><strong>Good (0–50):</strong> Air is clean and healthy.</li>
-      <li><strong>Moderate (51–100):</strong> Acceptable, but may pose a risk for some.</li>
-      <li><strong>Unhealthy (101–200+):</strong> Dangerous for sensitive groups and the general public.</li>
-    </ul>
-    <p>
-      AQI helps citizens understand when to limit outdoor activities and helps governments take necessary action to reduce emissions.
-    </p>
-  </section>
+    <section id="aqi" class="content-section" style="display: none;">
+      <h2>Air Quality Index (AQI)</h2>
+      <p>The AQI measures the concentration of major air pollutants such as PM2.5, PM10, ozone (O₃), nitrogen dioxide (NO₂), sulfur dioxide (SO₂), and carbon monoxide (CO). Based on these pollutants, the AQI categorizes the air as:</p>
+      <ul>
+        <li><strong>Good (0–50):</strong> Air is clean and healthy.</li>
+        <li><strong>Moderate (51–100):</strong> Acceptable, but may pose a risk for some.</li>
+        <li><strong>Unhealthy (101–200+):</strong> Dangerous for sensitive groups and the general public.</li>
+      </ul>
+      <p>AQI helps citizens understand when to limit outdoor activities and helps governments take necessary action to reduce emissions.</p>
+    </section>
 
-  <!-- WQI Section -->
-  <section>
-    <h2>Water Quality Index (WQI)</h2>
-    <p>
-      WQI is used to assess the overall quality of water bodies like rivers, lakes, and reservoirs.
-      It takes into account parameters such as pH, dissolved oxygen (DO), turbidity, temperature, nitrates, and biological content.
-      WQI ratings can be:
-    </p>
-    <ul>
-      <li><strong>Excellent (0–25):</strong> Safe for drinking and aquatic life.</li>
-      <li><strong>Good (26–50):</strong> Suitable for domestic and recreational use.</li>
-      <li><strong>Poor (50+):</strong> Contaminated, and may be unsafe for use.</li>
-    </ul>
-    <p>
-      Monitoring WQI helps ensure water is safe for drinking, agriculture, and aquatic ecosystems.
-    </p>
-  </section>
+    <section id="wqi" class="content-section" style="display: none;">
+      <h2>Water Quality Index (WQI)</h2>
+      <p>WQI is used to assess the overall quality of water bodies like rivers, lakes, and reservoirs. It takes into account parameters such as pH, dissolved oxygen (DO), turbidity, temperature, nitrates, and biological content. WQI ratings can be:</p>
+      <ul>
+        <li><strong>Excellent (0–25):</strong> Safe for drinking and aquatic life.</li>
+        <li><strong>Good (26–50):</strong> Suitable for domestic and recreational use.</li>
+        <li><strong>Poor (50+):</strong> Contaminated, and may be unsafe for use.</li>
+      </ul>
+      <p>Monitoring WQI helps ensure water is safe for drinking, agriculture, and aquatic ecosystems.</p>
+    </section>
 
-  <!-- Conclusion -->
-  <section>
-    <h2>Conclusion</h2>
-    <p>
-      Air and water quality indices are vital tools that translate complex environmental data into simple, understandable information.
-      By tracking AQI and WQI, individuals, communities, and governments can take informed steps to reduce pollution and protect natural resources.
-      A cleaner environment begins with awareness — and these indices are a step forward in promoting sustainable living.
-    </p>
-  </section>
+    <section id="conclusion" class="content-section" style="display: none;">
+      <h2>Conclusion</h2>
+      <p>Air and water quality indices are vital tools that translate complex environmental data into simple, understandable information. By tracking AQI and WQI, individuals, communities, and governments can take informed steps to reduce pollution and protect natural resources. A cleaner environment begins with awareness—and these indices are a step forward in promoting sustainable living.</p>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
     <p>Environment Monitoring Project © 2025</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
