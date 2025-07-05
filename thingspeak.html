@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ThingSpeak Data</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .chart-container {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 300px;
+      margin-top: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 50px;
+      color: #007BFF;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="thingspeak.html" class="active">ThingSpeak</a></li>
-      <li><a href="testcases.html">Test Cases</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="signin.html">Sign In</a></li>
-    </ul>
-  </nav>
+  <header>
+    <h1>ThingSpeak Data</h1>
+    <p>Live Sensor Readings from IoT Device</p>
+  </header>
 
-  <section class="section fade-in">
-    <h2>Live Sensor Readings</h2>
+  <div class="chart-container">
+    <h2>Temperature</h2>
+    <iframe src="https://thingspeak.com/channels/3002847/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&type=line&title=Temperature+Readings"></iframe>
 
-    <iframe width="450" height="260" style="border: 1px solid #ccc;" 
-      src="https://thingspeak.com/channels/YOUR_CHANNEL_ID/charts/1?bgcolor=%23ffffff&color=%2300aaff&dynamic=true">
-    </iframe>
+    <h2>Humidity</h2>
+    <iframe src="https://thingspeak.com/channels/3002847/charts/2?bgcolor=%23ffffff&color=%23007BFF&dynamic=true&type=line&title=Humidity+Readings"></iframe>
 
-    <iframe width="450" height="260" style="border: 1px solid #ccc;" 
-      src="https://thingspeak.com/channels/YOUR_CHANNEL_ID/charts/2?bgcolor=%23ffffff&color=%23ff9900&dynamic=true">
-    </iframe>
-    
-  </section>
+    <h2>Gas Concentration</h2>
+    <iframe src="https://thingspeak.com/channels/3002847/charts/4?bgcolor=%23ffffff&color=%2300cc44&dynamic=true&type=line&title=Gas+Concentration+Levels"></iframe>
+
+    <h2>Turbidity</h2>
+    <iframe src="https://thingspeak.com/channels/3002927/charts/3?bgcolor=%23ffffff&color=%23aa00ff&dynamic=true&type=line&title=Turbidity+Levels"></iframe>
+  </div>
+
+  <footer>
+    <p>Air & Water Quality Monitoring • ThingSpeak Visualization © 2025</p>
+  </footer>
 
 </body>
 </html>
