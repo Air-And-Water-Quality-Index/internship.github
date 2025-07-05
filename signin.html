@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Sign In</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <nav class="navbar">
-    <ul>
+    <h2>Environment Monitor</h2>
+    <div class="nav-toggle" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="team.html">Team</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
+      <li><a href="team.html">Team</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="signin.html" class="active">Sign In</a></li>
     </ul>
   </nav>
 
-  <section class="section">
-    <h2>Sign In</h2>
-    <form action="#" method="POST" style="max-width:400px;margin:auto;">
-      <input type="text" placeholder="Username" required><br><br>
-      <input type="email" placeholder="Email" required><br><br>
-      <input type="password" placeholder="Password" required><br><br>
-      <button type="submit">Sign In</button>
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+
+  <section class="form-container">
+    <form>
+      <label>Full Name:</label>
+      <input type="text" placeholder="Enter your full name" required />
+
+      <label>Email:</label>
+      <input type="email" placeholder="Enter your email" required />
+
+      <label>Password:</label>
+      <input type="password" placeholder="Create a password" required />
+
+      <button type="submit">Sign Up</button>
     </form>
   </section>
 
-  <footer class="footer">
-    <p>© 2025 AQI & WQI Monitoring</p>
+  <footer>
+    <p>© 2025 Environment Monitoring Team</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
