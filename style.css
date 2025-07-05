@@ -1,69 +1,97 @@
-/* Navbar Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f2f7fc;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
 .navbar {
-  background-color: #007BFF;
+  background-color: #005fdd;
+  color: #fff;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .navbar h2 {
-  color: white;
   margin: 0;
-  font-size: 22px;
 }
 
 .navbar ul {
-  list-style: none;
+  list-style-type: none;
   display: flex;
-  gap: 25px;
-  margin: 0;
+  flex-wrap: wrap;
   padding: 0;
+  margin: 0;
 }
 
-.navbar a {
-  color: white;
+.navbar ul li {
+  margin: 0 10px;
+}
+
+.navbar ul li a {
   text-decoration: none;
-  font-weight: 500;
+  color: #fff;
+  font-weight: bold;
 }
 
-.navbar a:hover {
-  text-decoration: underline;
+.navbar ul li a.active,
+.navbar ul li a:hover {
+  border-bottom: 2px solid #fff;
 }
 
-/* Mobile Responsive Navbar */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
+.main-header {
+  background-color: #e8f1fa;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.nav-toggle span {
-  height: 3px;
-  width: 25px;
-  background: white;
-  margin: 4px 0;
+.main-header h1 {
+  font-size: 2em;
+  color: #003b8b;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
-  }
+.info-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
+.info-card h2 {
+  color: #0056b3;
+  margin-top: 0;
+}
+
+footer {
+  background-color: #003b8b;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
   .navbar ul {
-    display: none;
     flex-direction: column;
     width: 100%;
-    background: #007BFF;
-  }
-
-  .navbar ul.active {
-    display: flex;
   }
 
   .navbar ul li {
-    padding: 10px 0;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 10px 0;
+  }
+
+  .main-header h1 {
+    font-size: 1.5em;
+  }
+
+  .info-card {
+    padding: 15px;
+    margin: 15px;
   }
 }
