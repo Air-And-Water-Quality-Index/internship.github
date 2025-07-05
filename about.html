@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About - AQI & WQI</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>About</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <nav class="navbar">
-    <ul>
+    <h2>Environment Monitor</h2>
+    <div class="nav-toggle" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
-      <li><a href="team.html">Team</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
+      <li><a href="team.html">Team</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="signin.html">Sign In</a></li>
     </ul>
   </nav>
 
-  <section class="section fade-in">
-    <h2>Hardware Used</h2>
+  <header>
+    <h1>About Our Project</h1>
+  </header>
+
+  <section>
+    <h2>Hardware</h2>
     <ul>
-      <li>DHT11 – Temperature & Humidity Sensor <br><img src="WhatsApp Image 2025-07-04 at 4.05.26 PM.jpeg" alt="DHT11 Sensor" width="350"></li>
-      <li>MQ135 – Gas Sensor <br><img src="" alt="WhatsApp Image 2025-07-04 at 4.05.27 PM.jpeg" width="350"></li>
-      <li>Turbidity Sensor – Water Quality <br><img src="WhatsApp Image 2025-07-04 at 4.05.26 PM (1).jpeg" alt="Turbidity Sensor" width="350"></li>
-      <li>ESP8266 – WiFi Module<br><img src="" alt="WhatsApp Image 2025-07-04 at 10.57.04 PM.jpeg" width="350"></li>
-      <li>Arduino Uno<br><img src="" alt="WhatsApp Image 2025-07-04 at 10.58.28 PM.jpeg" width="350"></li>
+      <li>DHT11 – Temperature & Humidity Sensor</li>
+      <img src="images/dht11.jpg" alt="DHT11 Sensor" />
+      <li>MQ135 – Gas Sensor</li>
+      <img src="images/mq135.jpg" alt="MQ135 Sensor" />
+      <li>Turbidity Sensor</li>
+      <img src="images/turbidity.jpg" alt="Turbidity Sensor" />
     </ul>
   </section>
 
-  <section class="section fade-in">
-    <h2>Software Used</h2>
+  <section>
+    <h2>Software</h2>
     <ul>
-      <li>Arduino IDE – Sensor Code</li>
-      <li>ThingSpeak – Cloud Platform</li>
-      <li>HTML/CSS/JS – Website</li>
-      <li>GitHub – Hosting</li>
+      <li>Arduino IDE</li>
+      <li>ThingSpeak</li>
+      <li>HTML, CSS, JS</li>
+      <li>GitHub</li>
     </ul>
   </section>
 
+  <footer>
+    <p>© 2025 Environment Monitoring Team</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
