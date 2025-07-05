@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Air & Water Quality Monitoring</title>
+  <title>Environment Monitoring - Home</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navbar -->
   <nav class="navbar">
-    <ul>
+    <h2>Environment Monitor</h2>
+    <div class="nav-toggle" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
@@ -21,34 +24,29 @@
     </ul>
   </nav>
 
-  <!-- Header Section -->
   <header>
-    <h1>Air & Water Quality Monitoring</h1>
-    <p>Environmental Index Dashboard Using IoT Sensors</p>
+    <h1>Air and Water Quality Monitoring</h1>
   </header>
 
-  <!-- Introduction Section -->
-  <section class="section">
+  <section>
     <h2>Problem Statement</h2>
-    <p>
-      Air and water quality index and environment monitoring. Pollution and climate change are increasing drastically in recent years. Monitoring environmental parameters has become essential to assess risk and ensure public safety.
-    </p>
-
-    <h2>Solution</h2>
-    <p>
-      As part of our solution, we built a prototype using sensors like <strong>DHT11</strong>, <strong>Turbidity</strong>, and <strong>MQ135</strong> to measure temperature, humidity, turbidity, and gas concentration. The sensor readings are collected through an <strong>Arduino + ESP8266</strong> setup and data is pushed in real-time to the cloud using <strong>ThingSpeak</strong>.
-    </p>
-
-    <h2>Uniqueness</h2>
-    <p>
-      This system provides live air and water quality monitoring on a web dashboard with categorized AQI/WQI interpretation. It’s cost-effective, accessible for public awareness, and scalable for local environments, schools, and communities.
-    </p>
+    <p>Air and water pollution significantly impact environmental and human health. Monitoring quality in real-time helps prevent disasters and ensure safe living conditions.</p>
   </section>
 
-  <!-- Footer -->
+  <section>
+    <h2>Our Solution</h2>
+    <p>We built a prototype using DHT11, Turbidity Sensor, and MQ135. Readings were collected using Arduino and ESP8266 and pushed to the cloud using ThingSpeak for real-time monitoring.</p>
+  </section>
+
+  <section>
+    <h2>Uniqueness</h2>
+    <p>This project combines environmental sensing, IoT, and cloud visualization in a simple system accessible to students and communities for awareness and monitoring.</p>
+  </section>
+
   <footer>
-    <p>© 2025 Environment Monitoring Project | Built with 💡 by Team AQ-WQ</p>
+    <p>© 2025 Environment Monitoring Team</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
