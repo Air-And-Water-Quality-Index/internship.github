@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Air and Water Quality Monitoring</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Air & Water Quality Monitoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar">
-    <h2>Environment Monitor</h2>
-    <div class="nav-toggle" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </div>
-    <ul id="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="team.html">Team</a></li>
+      <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="signin.html">Sign In</a></li>
     </ul>
   </nav>
 
-  <header class="main-header">
-    <h1>Air and Water Quality Monitoring</h1>
-  </header>
-
-  <section class="info-card">
-    <h2>🧩 Problem Statement</h2>
-    <p>Air and water pollution significantly impact environmental and human health. Monitoring quality in real-time can help prevent disasters and ensure safe living conditions.</p>
+  <!-- Home Section -->
+  <section id="home" class="hero fade-in">
+    <h1>Air & Water Quality Monitoring</h1>
+    <p>Monitoring Environmental Conditions Using Sensors & IoT</p>
   </section>
 
-  <section class="info-card">
-    <h2>💡 Our Solution</h2>
-    <p>We built a prototype using DHT11, Turbidity Sensor, and MQ135. Readings were collected using an Arduino and ESP8266 and pushed to the cloud using ThingSpeak for real-time monitoring.</p>
+  <!-- Problem Statement -->
+  <section class="section fade-in">
+    <h2>Problem Statement</h2>
+    <p>Air and water quality index and environment monitoring.</p>
   </section>
 
-  <section class="info-card">
-    <h2>🌟 Uniqueness</h2>
-    <p>This project combines environmental sensing, IoT, and cloud visualization in a single system accessible to students and communities for awareness and monitoring.</p>
+  <!-- Solution -->
+  <section class="section fade-in">
+    <h2>Our Solution</h2>
+    <p>We prepared a prototype using sensors like DHT11, Turbidity Sensor, and MQ135 to measure temperature, humidity, turbidity of water, and gas concentrations. The data is collected using Arduino and ESP8266 and pushed to the cloud using ThingSpeak.</p>
   </section>
 
+  <!-- Uniqueness -->
+  <section class="section fade-in">
+    <h2>Uniqueness</h2>
+    <p>This project combines real-time monitoring, IoT integration, and cloud-based visualization to create a low-cost and effective environmental tracking system.</p>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Environment Monitoring Team</p>
+    <p>© 2025 Environmental Monitoring Team</p>
   </footer>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
