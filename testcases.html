@@ -1,47 +1,41 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Test Cases</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Test Cases - Air & Water Quality Monitoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar">
-    <h2>Environment Monitor</h2>
-    <div class="nav-toggle" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </div>
-    <ul id="nav-links">
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="team.html">Team</a></li>
+      <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="testcases.html" class="active">Test Cases</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="signin.html">Sign In</a></li>
     </ul>
   </nav>
 
-  <header>
-    <h1>Test Case Results</h1>
-  </header>
-
-  <section>
-    <h2>Sample Graphs</h2>
-    <p>Below are some test case graphs and images based on sensor data collected:</p>
-    
-    <img src="images/test1.jpg" alt="Test Case 1" class="responsive-img" />
-    <img src="images/test2.jpg" alt="Test Case 2" class="responsive-img" />
-    <img src="images/test3.jpg" alt="Test Case 3" class="responsive-img" />
-    
-    <p>Each graph corresponds to real-time data captured during the environmental experiment phase.</p>
+  <!-- Test Cases Section -->
+  <section class="section fade-in">
+    <h2>Test Cases</h2>
+    <ul>
+      <li>✅ Sensor data successfully read and uploaded to ThingSpeak</li>
+      <li>✅ Alerts generated when air quality drops below safe levels</li>
+      <li>✅ Responsive design tested on multiple screen sizes</li>
+      <li>✅ Error handling for disconnected sensors</li>
+    </ul>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Environment Monitoring Team</p>
+    <p>© 2025 Environmental Monitoring Team</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
