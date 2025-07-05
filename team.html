@@ -2,90 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Team</title>
+  <title>Team</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .team-container {
-      max-width: 1200px;
-      margin: 50px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 0 20px;
-    }
-
-    .team-card {
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-
-    .team-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .team-card h3 {
-      margin-top: 10px;
-      color: #007BFF;
-    }
-
-    .team-card p {
-      margin: 8px 0;
-      font-size: 14px;
-      color: #444;
-    }
-
-    .team-card a {
-      text-decoration: none;
-      color: #007BFF;
-      font-weight: bold;
-    }
-
-    header, footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
-
-    .navbar {
-      background-color: #007BFF;
-      padding: 15px;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    h1 {
-      margin-top: 30px;
-      color: #333;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar">
-    <ul>
+    <h2>Environment Monitor</h2>
+    <div class="nav-toggle" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
@@ -97,45 +24,40 @@
   </nav>
 
   <header>
-    <h1>Meet Our Team</h1>
+    <h1>Our Team</h1>
   </header>
 
-  <!-- Team Cards -->
-  <section class="team-container">
-    <div class="team-card">
+  <section class="team-grid">
+    <div class="team-member">
       <h3>Nagula Aishwarya</h3>
       <p>Email: b24ec140@kitsw.ac.in</p>
-      <p><a href="https://github.com/Aishwarya-ui-sys" target="_blank">GitHub Portfolio</a></p>
+      <a href="https://github.com/Aishwarya-ui-sys" target="_blank">GitHub</a>
     </div>
-
-    <div class="team-card">
+    <div class="team-member">
       <h3>Karimilla Neha Lakshmi</h3>
       <p>Email: b24ec144@kitsw.ac.in</p>
-      <p><a href="https://b24ec144.github.io/portfolio.github.io/" target="_blank">GitHub Portfolio</a></p>
+      <a href="https://b24ec144.github.io/portfolio.github.io/" target="_blank">GitHub</a>
     </div>
-
-    <div class="team-card">
+    <div class="team-member">
       <h3>Thumma Vaishnavi</h3>
       <p>Email: b24ec114@kitsw.ac.in</p>
-      <p><a href="https://b24ec114.github.io/vaishnavi.github.io/" target="_blank">GitHub Portfolio</a></p>
+      <a href="https://b24ec114.github.io/vaishnavi.github.io/" target="_blank">GitHub</a>
     </div>
-
-    <div class="team-card">
+    <div class="team-member">
       <h3>Kokkula Poornima</h3>
       <p>Email: b24ec163@kitsw.ac.in</p>
-      <p><a href="https://b24ec163.github.io/poornima.github/" target="_blank">GitHub Portfolio</a></p>
+      <a href="https://b24ec163.github.io/poornima.github/" target="_blank">GitHub</a>
     </div>
-
-    <div class="team-card">
+    <div class="team-member">
       <h3>Teja Harshini</h3>
       <p>Email: b24ec148@kitsw.ac.in</p>
-      <p><em>GitHub Portfolio: Coming Soon</em></p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Environment Monitoring Team – All rights reserved</p>
+    <p>© 2025 Environment Monitoring Team</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
