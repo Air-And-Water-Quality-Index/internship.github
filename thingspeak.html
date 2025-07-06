@@ -1,39 +1,44 @@
-<!-- Temperature -->
-<h3 style="color: blue;">Temperature</h3>
-<iframe width="450" height="260" style="border: 1px solid #ccc;" src="https://thingspeak.com/channels/XXXXX/widgets/YYYY"></iframe>
-<div class="sensor-info">
-  <strong>Expected Range:</strong> 15°C – 35°C<br>
-  <strong>Min:</strong> Below 15°C → Cold conditions<br>
-  <strong>Max:</strong> Above 35°C → Hot or heatwave conditions<br>
-  <em>Impacts:</em> Temperature below 15°C can lead to discomfort or foggy weather. Above 35°C may indicate heat stress and requires hydration and shelter.
-</div>
+<section class="section fade-in">
+  <h2 style="text-align:center; color: #003366;">ThingSpeak Data</h2>
+  <p style="text-align:center;">Live Sensor Readings from IoT Device</p>
 
-<!-- Humidity -->
-<h3 style="color: blue;">Humidity</h3>
-<iframe width="450" height="260" style="border: 1px solid #ccc;" src="https://thingspeak.com/channels/XXXXX/widgets/YYYY"></iframe>
-<div class="sensor-info">
-  <strong>Expected Range:</strong> 30% – 70%<br>
-  <strong>Min:</strong> Below 30% → Dry air<br>
-  <strong>Max:</strong> Above 70% → High humidity<br>
-  <em>Impacts:</em> Low humidity causes dry skin and throat. High humidity indicates chances of rainfall or discomfort in summer.
-</div>
+  <!-- Temperature -->
+  <h3 style="text-align:center; color: #0057e7;">Temperature</h3>
+  <iframe width="450" height="260" style="display: block; margin: auto;" 
+          src="https://thingspeak.com/channels/3002847/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&type=line&title=Temperature+Readings"></iframe>
+  <p style="text-align:center;">
+    🔹 Normal: 20°C – 35°C<br>
+    🔺 High (>35°C): Hot weather, possible heat stress<br>
+    🔻 Low (<20°C): Cold climate, might affect sensor accuracy
+  </p>
 
-<!-- Gas Concentration -->
-<h3 style="color: blue;">Gas Concentration</h3>
-<iframe width="450" height="260" style="border: 1px solid #ccc;" src="https://thingspeak.com/channels/XXXXX/widgets/YYYY"></iframe>
-<div class="sensor-info">
-  <strong>Expected Range:</strong> 200 – 400 ppm<br>
-  <strong>Min:</strong> Below 200 ppm → Clean air<br>
-  <strong>Max:</strong> Above 400 ppm → Polluted air<br>
-  <em>Impacts:</em> High gas concentration (e.g., CO₂, CO, or VOCs) can lead to breathing discomfort, especially in closed environments.
-</div>
+  <!-- Humidity -->
+  <h3 style="text-align:center; color: #0057e7;">Humidity</h3>
+  <iframe width="450" height="260" style="display: block; margin: auto;" 
+          src="https://thingspeak.com/channels/3002847/charts/2?bgcolor=%23ffffff&color=%2300aaff&dynamic=true&type=line&title=Humidity+Readings"></iframe>
+  <p style="text-align:center;">
+    🔹 Normal: 30% – 60%<br>
+    🔺 High (>60%): Humid environment, discomfort<br>
+    🔻 Low (<30%): Dry air, potential for respiratory discomfort
+  </p>
 
-<!-- Turbidity -->
-<h3 style="color: blue;">Turbidity</h3>
-<iframe width="450" height="260" style="border: 1px solid #ccc;" src="https://thingspeak.com/channels/XXXXX/widgets/YYYY"></iframe>
-<div class="sensor-info">
-  <strong>Expected Range:</strong> 0 – 5 NTU (Nephelometric Turbidity Units)<br>
-  <strong>Min:</strong> 0 NTU → Clear water<br>
-  <strong>Max:</strong> Above 5 NTU → Cloudy/contaminated water<br>
-  <em>Impacts:</em> High turbidity may indicate suspended particles, pollutants, or unsafe drinking water.
-</div>
+  <!-- Gas Concentration -->
+  <h3 style="text-align:center; color: #0057e7;">Gas Concentration</h3>
+  <iframe width="450" height="260" style="display: block; margin: auto;" 
+          src="https://thingspeak.com/channels/3002847/charts/4?bgcolor=%23ffffff&color=%2300cc44&dynamic=true&type=line&title=Gas+Concentration+Levels"></iframe>
+  <p style="text-align:center;">
+    🔹 Normal: 0 – 300 ppm<br>
+    ⚠️ Moderate (300–600 ppm): Poor air quality<br>
+    🔺 High (>600 ppm): Dangerous gas levels, health risk
+  </p>
+
+  <!-- Turbidity -->
+  <h3 style="text-align:center; color: #0057e7;">Turbidity</h3>
+  <iframe width="450" height="260" style="display: block; margin: auto;" 
+          src="https://thingspeak.com/channels/3002927/charts/3?bgcolor=%23ffffff&color=%23aa00ff&dynamic=true&type=line&title=Turbidity+Level"></iframe>
+  <p style="text-align:center;">
+    🔹 Low (<5 NTU): Clean water<br>
+    ⚠️ Moderate (5–50 NTU): Acceptable for use but not ideal<br>
+    🔺 High (>50 NTU): Highly turbid, unsafe for consumption
+  </p>
+</section>
