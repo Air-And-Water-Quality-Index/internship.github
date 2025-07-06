@@ -63,4 +63,141 @@
     }
 
     header h1 {
-      font-size: 34px; /* LARGE*
+      font-size: 34px; /* LARGE */
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      font-size: 28px; /* LARGE */
+    }
+
+    .hardware-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .hardware-item {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .hardware-item strong {
+      font-size: 22px; /* LARGE */
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    .preview-img {
+      max-width: 500px; /* Medium images */
+      margin-top: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    li {
+      font-size: 20px; /* LARGE */
+    }
+
+    footer {
+      background-color: #0066cc;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      font-size: 18px; /* Slightly large */
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <h2>Environment Monitor</h2>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="thingspeak.html">ThingSpeak</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="testcases.html">Test Cases</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>About Our Project</h1>
+  </header>
+
+  <section>
+    <h2>Hardware</h2>
+    <ul class="hardware-list">
+      <li class="hardware-item">
+        <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img1', 'img1Data')">
+        <br><img id="img1" class="preview-img" src="" alt="DHT11 Sensor" />
+      </li>
+      <li class="hardware-item">
+        <strong>MQ2 – Gas Sensor</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img2', 'img2Data')">
+        <br><img id="img2" class="preview-img" src="" alt="MQ2 Gas Sensor" />
+      </li>
+      <li class="hardware-item">
+        <strong>Turbidity Sensor</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img3', 'img3Data')">
+        <br><img id="img3" class="preview-img" src="" alt="Turbidity Sensor" />
+      </li>
+      <li class="hardware-item">
+        <strong>ESP8266 Wi-Fi Module</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img4', 'img4Data')">
+        <br><img id="img4" class="preview-img" src="" alt="ESP8266 WiFi Module" />
+      </li>
+      <li class="hardware-item">
+        <strong>Arduino Uno</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img5', 'img5Data')">
+        <br><img id="img5" class="preview-img" src="" alt="Arduino Uno Board" />
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Software</h2>
+    <ul>
+      <li>Arduino IDE</li>
+      <li>ThingSpeak</li>
+      <li>HTML, CSS, JS</li>
+      <li>GitHub</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Environment Monitoring Team</p>
+  </footer>
+
+  <script>
+    function previewImage(event, imgId, storageKey) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const dataURL = reader.result;
+        document.getElementById(imgId).src = dataURL;
+        localStorage.setItem(storageKey, dataURL); // Save to localStorage
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+    // On page load, load saved images from localStorage
+    window.onload = function () {
+      const images = ['img1', 'img2', 'img3', 'img4', 'img5'];
+      images.forEach((imgId) => {
+        const saved = localStorage.getItem(imgId + 'Data');
+        if (saved) {
+          document.getElementById(imgId).src = saved;
+        }
+      });
+    };
+  </script>
+
+</body>
+</html>
