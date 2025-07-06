@@ -108,10 +108,10 @@
       margin-bottom: 10px;
     }
 
-    .card p {
-      font-size: 20px;
-      line-height: 1.6;
-      color: #333;
+    .card input[type="file"] {
+      font-size: 16px;
+      padding: 5px;
+      margin-top: 10px;
     }
 
     footer {
@@ -158,31 +158,22 @@
 
   <!-- Test Case Cards -->
 
-  <!-- Test Case 1 -->
+  <!-- Polluted Water -->
   <div class="card">
-    <h3>Test Case 1: Sensor Connectivity</h3>
-    <img src="images/testcase1.jpg" alt="Test Case 1 Image">
-    <p>
-      This test verifies that all environmental sensors are properly connected and transmitting accurate data to the microcontroller. It checks initial boot values and real-time readings across various environmental conditions.
-    </p>
+    <h3>Polluted Water</h3>
+    <input type="file" accept="image/*">
   </div>
 
-  <!-- Test Case 2 -->
+  <!-- Usable Water -->
   <div class="card">
-    <h3>Test Case 2: Cloud Data Upload</h3>
-    <img src="images/testcase2.jpg" alt="Test Case 2 Image">
-    <p>
-      This test ensures the collected sensor data is successfully sent to ThingSpeak via Wi-Fi. The test confirms the stability of the network connection and data refresh intervals without any packet loss or delays.
-    </p>
+    <h3>Usable Water</h3>
+    <input type="file" accept="image/*">
   </div>
 
-  <!-- Test Case 3 -->
+  <!-- Drinking Water -->
   <div class="card">
-    <h3>Test Case 3: Alert System Functionality</h3>
-    <img src="images/testcase3.jpg" alt="Test Case 3 Image">
-    <p>
-      The alert system is tested by simulating extreme values (e.g., high gas levels, turbidity, or temperature). This ensures the system can notify users in real-time through visual indicators and dashboard warnings.
-    </p>
+    <h3>Drinking Water</h3>
+    <input type="file" accept="image/*">
   </div>
 
 </section>
