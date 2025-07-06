@@ -70,7 +70,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 40px auto;
       background-color: white;
       padding: 30px;
@@ -89,7 +89,7 @@
 
     .testcase {
       margin-bottom: 40px;
-      width: 80%;
+      width: 100%;
       text-align: center;
     }
 
@@ -104,18 +104,19 @@
     }
 
     .testcase textarea {
-      width: 100%;
+      width: 80%;
       height: 100px;
       resize: vertical;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 14px;
+      margin-top: 10px;
     }
 
     .preview-img {
-      margin-top: 10px;
-      max-width: 100%;
+      margin-top: 15px;
+      width: 300px;
       height: auto;
       border: 1px solid #ccc;
       border-radius: 6px;
@@ -137,7 +138,7 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
-        <a href="#" class="dropbtn">About</a>
+        <a href="#">About</a>
         <div class="dropdown-content">
           <a href="about_hardware.html">Hardware</a>
           <a href="about_software.html">Software</a>
@@ -156,23 +157,23 @@
 
     <div class="testcase" id="tc1">
       <h2>Test Case 1: Polluted Water</h2>
-      <input type="file" accept="image/*" onchange="handleUpload(event, 'tc1')" />
+      <input type="file" accept="image/*" onchange="handleUpload(event, 'tc1')">
       <img id="img1" class="preview-img" />
-      <textarea placeholder="Enter description or observation..." id="desc1" oninput="saveDescription('tc1')"></textarea>
+      <textarea placeholder="Enter description..." id="desc1" oninput="saveDescription('tc1')"></textarea>
     </div>
 
     <div class="testcase" id="tc2">
       <h2>Test Case 2: Usable Water</h2>
-      <input type="file" accept="image/*" onchange="handleUpload(event, 'tc2')" />
+      <input type="file" accept="image/*" onchange="handleUpload(event, 'tc2')">
       <img id="img2" class="preview-img" />
-      <textarea placeholder="Enter description or observation..." id="desc2" oninput="saveDescription('tc2')"></textarea>
+      <textarea placeholder="Enter description..." id="desc2" oninput="saveDescription('tc2')"></textarea>
     </div>
 
     <div class="testcase" id="tc3">
       <h2>Test Case 3: Drinking Water</h2>
-      <input type="file" accept="image/*" onchange="handleUpload(event, 'tc3')" />
+      <input type="file" accept="image/*" onchange="handleUpload(event, 'tc3')">
       <img id="img3" class="preview-img" />
-      <textarea placeholder="Enter description or observation..." id="desc3" oninput="saveDescription('tc3')"></textarea>
+      <textarea placeholder="Enter description..." id="desc3" oninput="saveDescription('tc3')"></textarea>
     </div>
   </div>
 
@@ -181,32 +182,34 @@
   </footer>
 
   <script>
+    // Handles uploading and saving image to localStorage
     function handleUpload(event, key) {
       const file = event.target.files[0];
+      if (!file) return;
+
       const reader = new FileReader();
       reader.onload = function (e) {
         const imgData = e.target.result;
         localStorage.setItem(key + '_img', imgData);
         document.getElementById('img' + key.slice(-1)).src = imgData;
       };
-      if (file) reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
     }
 
+    // Save textarea description to localStorage
     function saveDescription(key) {
       const desc = document.getElementById('desc' + key.slice(-1)).value;
       localStorage.setItem(key + '_desc', desc);
     }
 
+    // Load images and descriptions from localStorage on page load
     function loadData() {
       ['tc1', 'tc2', 'tc3'].forEach((key, i) => {
-        const imgData = localStorage.getItem(key + '_img');
-        const descData = localStorage.getItem(key + '_desc');
-        if (imgData) {
-          document.getElementById('img' + (i + 1)).src = imgData;
-        }
-        if (descData) {
-          document.getElementById('desc' + (i + 1)).value = descData;
-        }
+        const img = localStorage.getItem(key + '_img');
+        const desc = localStorage.getItem(key + '_desc');
+
+        if (img) document.getElementById('img' + (i + 1)).src = img;
+        if (desc) document.getElementById('desc' + (i + 1)).value = desc;
       });
     }
 
@@ -214,4 +217,3 @@
   </script>
 </body>
 </html>
-
