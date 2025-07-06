@@ -156,23 +156,23 @@
 
     <div class="testcase" id="tc1">
       <h2>Test Case 1: Polluted Water</h2>
-      <input type="file" accept="image/*" onchange="previewImage(this, 'img1', 'tc1')" />
+      <input type="file" accept="image/*" onchange="handleUpload(event, 'tc1')" />
       <img id="img1" class="preview-img" />
-      <textarea placeholder="Enter description or observation..."></textarea>
+      <textarea placeholder="Enter description or observation..." id="desc1" oninput="saveDescription('tc1')"></textarea>
     </div>
 
     <div class="testcase" id="tc2">
       <h2>Test Case 2: Usable Water</h2>
-      <input type="file" accept="image/*" onchange="previewImage(this, 'img2', 'tc2')" />
+      <input type="file" accept="image/*" onchange="handleUpload(event, 'tc2')" />
       <img id="img2" class="preview-img" />
-      <textarea placeholder="Enter description or observation..."></textarea>
+      <textarea placeholder="Enter description or observation..." id="desc2" oninput="saveDescription('tc2')"></textarea>
     </div>
 
     <div class="testcase" id="tc3">
       <h2>Test Case 3: Drinking Water</h2>
-      <input type="file" accept="image/*" onchange="previewImage(this, 'img3', 'tc3')" />
+      <input type="file" accept="image/*" onchange="handleUpload(event, 'tc3')" />
       <img id="img3" class="preview-img" />
-      <textarea placeholder="Enter description or observation..."></textarea>
+      <textarea placeholder="Enter description or observation..." id="desc3" oninput="saveDescription('tc3')"></textarea>
     </div>
   </div>
 
@@ -181,28 +181,37 @@
   </footer>
 
   <script>
-    function previewImage(input, imgId, storageKey) {
-      const file = input.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const dataUrl = e.target.result;
-          document.getElementById(imgId).src = dataUrl;
-          localStorage.setItem(storageKey, dataUrl);
-        };
-        reader.readAsDataURL(file);
-      }
+    function handleUpload(event, key) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const imgData = e.target.result;
+        localStorage.setItem(key + '_img', imgData);
+        document.getElementById('img' + key.slice(-1)).src = imgData;
+      };
+      if (file) reader.readAsDataURL(file);
     }
 
-    // Load stored images on page load
-    window.onload = function () {
-      ['tc1', 'tc2', 'tc3'].forEach((id, index) => {
-        const dataUrl = localStorage.getItem(id);
-        if (dataUrl) {
-          document.getElementById('img' + (index + 1)).src = dataUrl;
+    function saveDescription(key) {
+      const desc = document.getElementById('desc' + key.slice(-1)).value;
+      localStorage.setItem(key + '_desc', desc);
+    }
+
+    function loadData() {
+      ['tc1', 'tc2', 'tc3'].forEach((key, i) => {
+        const imgData = localStorage.getItem(key + '_img');
+        const descData = localStorage.getItem(key + '_desc');
+        if (imgData) {
+          document.getElementById('img' + (i + 1)).src = imgData;
+        }
+        if (descData) {
+          document.getElementById('desc' + (i + 1)).value = descData;
         }
       });
-    };
+    }
+
+    window.onload = loadData;
   </script>
 </body>
 </html>
+
