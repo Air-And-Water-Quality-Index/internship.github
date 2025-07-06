@@ -1,118 +1,87 @@
-/* Reset and base styles */
+/* GENERAL STYLING */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #eef6ff, #ffffff);
+  font-family: Arial, sans-serif;
+  background-color: #f5f8fb;
   margin: 0;
   padding: 0;
 }
 
-h1, h2 {
-  color: #003366;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-/* Sticky Navbar */
+/* NAVBAR */
 .navbar {
-  background-color: #004a99;
+  background-color: #1f1f7a;
   overflow: hidden;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .navbar ul {
-  display: flex;
-  justify-content: center;
-  padding: 0;
+  list-style-type: none;
   margin: 0;
+  padding: 0;
 }
 
 .navbar li {
-  display: inline;
+  float: left;
 }
 
-.navbar a {
-  display: inline-block;
+.navbar li a {
+  display: block;
   color: white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  padding: 14px 20px;
-  transition: background 0.3s ease;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  background-color: #0066cc;
+.navbar li a:hover,
+.navbar li a.active {
+  background-color: #4a4aff;
 }
 
-/* Section styling */
-.section {
-  background: #ffffff;
-  margin: 30px auto;
+/* MAIN SECTION */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.page-title {
+  text-align: center;
+  color: #003366;
+  font-size: 28px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+/* INFO CARDS */
+.card {
+  background-color: #fff;
   padding: 25px;
-  max-width: 900px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: opacity 1s ease-in;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
 }
 
-.section ul li {
+.card h3 {
+  text-align: center;
+  color: #0057e7;
   margin-bottom: 15px;
-  font-size: 18px;
-  color: #333;
 }
 
-.section img {
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  max-width: 100%;
+.card p {
+  text-align: center;
+  font-size: 14px;
+  color: #222;
+  margin-top: 15px;
 }
 
-/* Footer (if needed later) */
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #f3f3f3;
-  color: #555;
-  margin-top: 50px;
-}
-
-/* Animations */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1.2s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-  }
-
-  .navbar a {
-    text-align: center;
-    padding: 12px;
-  }
-}
-.sensor-info {
-  background: #f0f8ff;
-  border-left: 4px solid #0077cc;
-  padding: 12px 20px;
-  margin: 10px 0 30px;
-  max-width: 480px;
-  font-size: 15px;
+  padding: 15px;
+  background-color: #eaeaea;
   color: #333;
-  line-height: 1.6;
-  border-radius: 8px;
+  font-size: 14px;
 }
