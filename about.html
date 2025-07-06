@@ -1,105 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>About</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .hardware-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .hardware-item {
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .hardware-item img {
-      max-width: 250px;
-      height: auto;
-      margin-top: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    header, section {
-      text-align: center;
-      margin: 40px auto;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="navbar">
-    <h2>Environment Monitor</h2>
-    <div class="nav-toggle" onclick="toggleNav()" role="button" tabindex="0" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </div>
-    <ul id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="thingspeak.html">ThingSpeak</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="testcases.html">Test Cases</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="signin.html">Sign In</a></li>
-    </ul>
-  </nav>
-
-  <header>
-    <h1>About Our Project</h1>
-  </header>
-
-  <section>
-    <h2>Hardware</h2>
-    <ul class="hardware-list">
-      <li class="hardware-item">
-        <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
-        <img src="images/dht11.jpg" alt="DHT11 Sensor" />
-      </li>
-      <li class="hardware-item">
-        <strong>MQ2 – Gas Sensor</strong><br>
-        <img src="images/mq2.jpg" alt="MQ2 Gas Sensor" />
-      </li>
-      <li class="hardware-item">
-        <strong>Turbidity Sensor</strong><br>
-        <img src="images/turbidity.jpg" alt="Turbidity Sensor" />
-      </li>
-      <li class="hardware-item">
-        <strong>ESP8266 Wi-Fi Module</strong><br>
-        <img src="images/esp8266.jpg" alt="ESP8266 WiFi Module" />
-      </li>
-      <li class="hardware-item">
-        <strong>Arduino Uno</strong><br>
-        <img src="images/arduino.jpg" alt="Arduino Uno Board" />
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Software</h2>
-    <ul>
-      <li>Arduino IDE</li>
-      <li>ThingSpeak</li>
-      <li>HTML, CSS, JS</li>
-      <li>GitHub</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 Environment Monitoring Team</p>
-  </footer>
-
-  <script>
-    function toggleNav() {
-      document.getElementById("nav-links").classList.toggle("show");
-    }
-  </script>
-</body>
-</html>
+<section>
+  <h2>Hardware</h2>
+  <ul>
+    <li>
+      <strong>DHT11 – Temperature & Humidity Sensor</strong><br />
+      <img src="images/dht11.png" alt="DHT11 Sensor" width="300" />
+    </li>
+    <li>
+      <strong>MQ2 – Gas Sensor</strong><br />
+      <img src="images/mq2.jpg" alt="MQ2 Gas Sensor" width="300" />
+    </li>
+    <li>
+      <strong>Turbidity Sensor</strong><br />
+      <img src="images/turbidity.jpg" alt="Turbidity Sensor" width="300" />
+    </li>
+    <li>
+      <strong>ESP8266 – WiFi Module</strong><br />
+      <img src="images/esp8266.jpg" alt="ESP8266 WiFi Module" width="300" />
+    </li>
+    <li>
+      <strong>Arduino – Microcontroller Board</strong><br />
+      <img src="images/arduino.jpg" alt="Arduino Board" width="300" />
+    </li>
+  </ul>
+</section>
