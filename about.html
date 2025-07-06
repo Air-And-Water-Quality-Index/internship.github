@@ -1,52 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>About</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .hardware-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .hardware-item {
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .hardware-item input[type="file"] {
-      margin-top: 10px;
-    }
-
-    .hardware-item img.preview {
-      display: block;
-      margin: 10px auto 0;
-      max-width: 300px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    header, section {
-      text-align: center;
-      margin: 40px auto;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>About - Air & Water Quality Monitoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar">
-    <h2>Environment Monitor</h2>
-    <div class="nav-toggle" onclick="toggleNav()" role="button" tabindex="0" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </div>
-    <ul id="nav-links">
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
@@ -57,43 +21,37 @@
     </ul>
   </nav>
 
-  <header>
-    <h1>About Our Project</h1>
-  </header>
+  <!-- About Section -->
+  <section class="section fade-in">
+    <h2>About Our Project</h2>
+    <h3>Hardware</h3>
 
-  <section>
-    <h2>Hardware</h2>
-    <ul class="hardware-list">
-      <li class="hardware-item">
-        <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'preview1')"><br>
-        <img id="preview1" class="preview" alt="Preview will appear here">
-      </li>
-      <li class="hardware-item">
-        <strong>MQ2 – Gas Sensor</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'preview2')"><br>
-        <img id="preview2" class="preview" alt="Preview will appear here">
-      </li>
-      <li class="hardware-item">
-        <strong>Turbidity Sensor</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'preview3')"><br>
-        <img id="preview3" class="preview" alt="Preview will appear here">
-      </li>
-      <li class="hardware-item">
-        <strong>ESP8266 Wi-Fi Module</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'preview4')"><br>
-        <img id="preview4" class="preview" alt="Preview will appear here">
-      </li>
-      <li class="hardware-item">
-        <strong>Arduino Uno</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'preview5')"><br>
-        <img id="preview5" class="preview" alt="Preview will appear here">
-      </li>
-    </ul>
-  </section>
+    <div class="sensor">
+      <img src="images/dht11.jpg" alt="DHT11 Sensor">
+      <p><strong>DHT11 – Temperature & Humidity Sensor</strong><br>Used to measure temperature and humidity in the environment.</p>
+    </div>
 
-  <section>
-    <h2>Software</h2>
+    <div class="sensor">
+      <img src="images/mq2.jpg" alt="MQ2 Gas Sensor">
+      <p><strong>MQ2 – Gas Sensor</strong><br>Used to detect gas leaks and measure air quality.</p>
+    </div>
+
+    <div class="sensor">
+      <img src="images/turbidity.jpg" alt="Turbidity Sensor">
+      <p><strong>Turbidity Sensor</strong><br>Used to measure the cloudiness (turbidity) of water.</p>
+    </div>
+
+    <div class="sensor">
+      <img src="images/esp8266.jpg" alt="ESP8266 Module">
+      <p><strong>ESP8266 Wi-Fi Module</strong><br>Used to transmit sensor data to the cloud via Wi-Fi.</p>
+    </div>
+
+    <div class="sensor">
+      <img src="images/arduino.jpg" alt="Arduino Uno">
+      <p><strong>Arduino Uno</strong><br>Microcontroller used to process and manage sensor data.</p>
+    </div>
+
+    <h3>Software</h3>
     <ul>
       <li>Arduino IDE</li>
       <li>ThingSpeak</li>
@@ -103,22 +61,8 @@
   </section>
 
   <footer>
-    <p>© 2025 Environment Monitoring Team</p>
+    <p>© 2025 Environmental Monitoring Team</p>
   </footer>
 
-  <script>
-    function toggleNav() {
-      document.getElementById("nav-links").classList.toggle("show");
-    }
-
-    function previewImage(event, previewId) {
-      const reader = new FileReader();
-      reader.onload = function () {
-        const output = document.getElementById(previewId);
-        output.src = reader.result;
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
-  </script>
 </body>
 </html>
