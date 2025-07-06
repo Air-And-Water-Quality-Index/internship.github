@@ -1,15 +1,131 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Test Cases - Air & Water Quality Monitoring</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      padding: 10px 20px;
+      background-color: #333;
+      justify-content: center;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul li {
+      margin: 0 10px;
+      position: relative;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      top: 100%;
+      left: 0;
+      z-index: 999;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 8px 12px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h2 {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .section ul li::before {
+      content: "✅";
+      margin-right: 10px;
+      color: green;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
+<!-- Navbar -->
+<nav class="navbar">
   <ul>
     <li><a href="index.html">Home</a></li>
     <li class="dropdown">
@@ -27,20 +143,54 @@
   </ul>
 </nav>
 
-  <!-- Test Cases Section -->
-  <section class="section fade-in">
-    <h2>Test Cases</h2>
-    <ul>
-      <li>✅ Sensor data successfully read and uploaded to ThingSpeak</li>
-      <li>✅ Alerts generated when air quality drops below safe levels</li>
-      <li>✅ Responsive design tested on multiple screen sizes</li>
-    </ul>
-  </section>
+<!-- Test Cases Section -->
+<section class="section fade-in">
+  <h2>Test Cases</h2>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Environmental Monitoring Team</p>
-  </footer>
+  <!-- Previous Bullet Points -->
+  <ul>
+    <li>Sensor data successfully read and uploaded to ThingSpeak</li>
+    <li>Alerts generated when air quality drops below safe levels</li>
+    <li>Responsive design tested on multiple screen sizes</li>
+  </ul>
+
+  <br><br>
+
+  <!-- Test Case Cards -->
+
+  <!-- Test Case 1 -->
+  <div class="card">
+    <h3>Test Case 1: Sensor Connectivity</h3>
+    <img src="images/testcase1.jpg" alt="Test Case 1 Image">
+    <p>
+      This test verifies that all environmental sensors are properly connected and transmitting accurate data to the microcontroller. It checks initial boot values and real-time readings across various environmental conditions.
+    </p>
+  </div>
+
+  <!-- Test Case 2 -->
+  <div class="card">
+    <h3>Test Case 2: Cloud Data Upload</h3>
+    <img src="images/testcase2.jpg" alt="Test Case 2 Image">
+    <p>
+      This test ensures the collected sensor data is successfully sent to ThingSpeak via Wi-Fi. The test confirms the stability of the network connection and data refresh intervals without any packet loss or delays.
+    </p>
+  </div>
+
+  <!-- Test Case 3 -->
+  <div class="card">
+    <h3>Test Case 3: Alert System Functionality</h3>
+    <img src="images/testcase3.jpg" alt="Test Case 3 Image">
+    <p>
+      The alert system is tested by simulating extreme values (e.g., high gas levels, turbidity, or temperature). This ensures the system can notify users in real-time through visual indicators and dashboard warnings.
+    </p>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Environmental Monitoring Team</p>
+</footer>
 
 </body>
 </html>
