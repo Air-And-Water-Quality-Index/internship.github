@@ -11,7 +11,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      font-size: 20px; /* LARGE */
+      font-size: 20px;
     }
 
     .navbar {
@@ -21,12 +21,15 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .navbar h2 {
       color: white;
       margin: 0;
-      font-size: 26px; /* LARGE */
+      font-size: 26px;
     }
 
     #nav-links {
@@ -38,6 +41,7 @@
     }
 
     #nav-links li {
+      position: relative;
       margin: 0 10px;
     }
 
@@ -45,16 +49,45 @@
       color: white;
       text-decoration: none;
       font-weight: 600;
-      font-size: 20px; /* LARGE */
+      font-size: 18px;
       padding: 10px 14px;
       border-radius: 6px;
       background-color: #3399ff;
       transition: background-color 0.3s;
+      display: inline-block;
     }
 
-    #nav-links a:hover,
-    #nav-links a.active {
+    #nav-links a:hover, #nav-links a.active {
       background-color: #004d99;
+    }
+
+    /* Dropdown menu */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #e6f2ff;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      top: 45px;
+    }
+
+    .dropdown-content a {
+      color: #003366;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      background-color: white;
+      font-size: 18px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #cce6ff;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     header, section {
@@ -62,13 +95,10 @@
       margin: 40px auto;
     }
 
-    header h1 {
-      font-size: 34px; /* LARGE */
-    }
-
     section h2 {
       margin-bottom: 20px;
-      font-size: 28px; /* LARGE */
+      font-size: 28px;
+      color: #003366;
     }
 
     .hardware-list {
@@ -82,7 +112,9 @@
     }
 
     .hardware-item strong {
-      font-size: 22px; /* LARGE */
+      font-size: 22px;
+      display: block;
+      margin-bottom: 10px;
     }
 
     input[type="file"] {
@@ -90,14 +122,15 @@
     }
 
     .preview-img {
-      max-width: 500px; /* Medium images */
+      max-width: 500px;
       margin-top: 15px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
-    li {
-      font-size: 20px; /* LARGE */
+    ul li {
+      font-size: 20px;
+      margin: 10px 0;
     }
 
     footer {
@@ -105,10 +138,12 @@
       color: white;
       text-align: center;
       padding: 10px 0;
-      position: relative;
-      bottom: 0;
       width: 100%;
-      font-size: 18px; /* Slightly large */
+      font-size: 18px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
@@ -118,7 +153,13 @@
     <h2>Environment Monitor</h2>
     <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
+      <li class="dropdown">
+        <a href="about.html" class="active">About ▼</a>
+        <div class="dropdown-content">
+          <a href="#hardware">Hardware</a>
+          <a href="#software">Software</a>
+        </div>
+      </li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
@@ -131,38 +172,38 @@
     <h1>About Our Project</h1>
   </header>
 
-  <section>
+  <section id="hardware">
     <h2>Hardware</h2>
     <ul class="hardware-list">
       <li class="hardware-item">
-        <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
+        <strong>DHT11 – Temperature & Humidity Sensor</strong>
         <input type="file" accept="image/*" onchange="previewImage(event, 'img1', 'img1Data')">
         <br><img id="img1" class="preview-img" src="" alt="DHT11 Sensor" />
       </li>
       <li class="hardware-item">
-        <strong>MQ2 – Gas Sensor</strong><br>
+        <strong>MQ2 – Gas Sensor</strong>
         <input type="file" accept="image/*" onchange="previewImage(event, 'img2', 'img2Data')">
         <br><img id="img2" class="preview-img" src="" alt="MQ2 Gas Sensor" />
       </li>
       <li class="hardware-item">
-        <strong>Turbidity Sensor</strong><br>
+        <strong>Turbidity Sensor</strong>
         <input type="file" accept="image/*" onchange="previewImage(event, 'img3', 'img3Data')">
         <br><img id="img3" class="preview-img" src="" alt="Turbidity Sensor" />
       </li>
       <li class="hardware-item">
-        <strong>ESP8266 Wi-Fi Module</strong><br>
+        <strong>ESP8266 Wi-Fi Module</strong>
         <input type="file" accept="image/*" onchange="previewImage(event, 'img4', 'img4Data')">
         <br><img id="img4" class="preview-img" src="" alt="ESP8266 WiFi Module" />
       </li>
       <li class="hardware-item">
-        <strong>Arduino Uno</strong><br>
+        <strong>Arduino Uno</strong>
         <input type="file" accept="image/*" onchange="previewImage(event, 'img5', 'img5Data')">
         <br><img id="img5" class="preview-img" src="" alt="Arduino Uno Board" />
       </li>
     </ul>
   </section>
 
-  <section>
+  <section id="software">
     <h2>Software</h2>
     <ul>
       <li>Arduino IDE</li>
@@ -182,12 +223,11 @@
       reader.onload = function () {
         const dataURL = reader.result;
         document.getElementById(imgId).src = dataURL;
-        localStorage.setItem(storageKey, dataURL); // Save to localStorage
+        localStorage.setItem(storageKey, dataURL);
       };
       reader.readAsDataURL(event.target.files[0]);
     }
 
-    // On page load, load saved images from localStorage
     window.onload = function () {
       const images = ['img1', 'img2', 'img3', 'img4', 'img5'];
       images.forEach((imgId) => {
