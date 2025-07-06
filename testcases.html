@@ -14,6 +14,7 @@
       background-color: #f4f4f4;
     }
 
+    /* Navbar */
     .navbar {
       background-color: navy;
     }
@@ -71,6 +72,7 @@
       background-color: #f0f0f0;
     }
 
+    /* Section */
     .section {
       max-width: 1000px;
       margin: 40px auto;
@@ -97,6 +99,7 @@
       color: green;
     }
 
+    /* Cards */
     .card {
       background: #ffffff;
       border-radius: 12px;
@@ -117,8 +120,73 @@
       margin-top: 10px;
     }
 
+    /* Footer */
     footer {
       text-align: center;
       padding: 20px;
       background-color: #f2f2f2;
       font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropbtn">About</a>
+      <div class="dropdown-content">
+        <a href="about_hardware.html">Hardware</a>
+        <a href="about_software.html">Software</a>
+      </div>
+    </li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="thingspeak.html">ThingSpeak</a></li>
+    <li><a href="testcases.html">Test Cases</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="signin.html">Sign In</a></li>
+  </ul>
+</nav>
+
+<!-- Test Cases Section -->
+<section class="section fade-in">
+  <h2>Test Cases</h2>
+
+  <!-- Previous Test Case Bullets -->
+  <ul>
+    <li>Sensor data successfully read and uploaded to ThingSpeak</li>
+    <li>Alerts generated when air quality drops below safe levels</li>
+    <li>Responsive design tested on multiple screen sizes</li>
+  </ul>
+
+  <br><br>
+
+  <!-- Test Case 1 -->
+  <div class="card">
+    <h3>Polluted Water</h3>
+    <input type="file" accept="image/*">
+  </div>
+
+  <!-- Test Case 2 -->
+  <div class="card">
+    <h3>Usable Water</h3>
+    <input type="file" accept="image/*">
+  </div>
+
+  <!-- Test Case 3 -->
+  <div class="card">
+    <h3>Drinking Water</h3>
+    <input type="file" accept="image/*">
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Environmental Monitoring Team</p>
+</footer>
+
+</body>
+</html>
