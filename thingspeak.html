@@ -3,66 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <title>ThingSpeak Data</title>
-  <link rel="stylesheet" href="style.css"> <!-- your existing style -->
+  <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- Navbar (reused from your site style) -->
 <nav class="navbar">
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="team.html">Team</a></li>
     <li><a class="active" href="thingspeak.html">ThingSpeak</a></li>
+    <li><a href="team.html">Team</a></li>
     <li><a href="testcases.html">Test Cases</a></li>
     <li><a href="login.html">Login</a></li>
     <li><a href="signin.html">Sign In</a></li>
   </ul>
 </nav>
 
-<!-- Section -->
-<section class="section fade-in">
-  <h2 style="text-align:center; color: #003366;">ThingSpeak Data</h2>
-  <p style="text-align:center;">Live Sensor Readings from IoT Device</p>
+<!-- Content Section -->
+<section class="container fade-in">
+  <h2 class="page-title">ThingSpeak Data</h2>
+  <p class="subtitle">Live Sensor Readings from IoT Device</p>
 
   <!-- Temperature -->
-  <h3 style="text-align:center; color: #0057e7;">Temperature</h3>
-  <iframe width="450" height="260" style="display: block; margin: auto;" 
-          src="https://thingspeak.com/channels/3002847/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&type=line&title=Temperature+Readings"></iframe>
-  <p style="text-align:center;">
-    🔹 Normal: 20°C – 35°C<br>
-    🔺 High (>35°C): Hot weather, possible heat stress<br>
-    🔻 Low (<20°C): Cold climate, might affect sensor accuracy
-  </p>
+  <div class="card">
+    <h3>Temperature</h3>
+    <iframe width="100%" height="260" src="https://thingspeak.com/channels/3002847/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&type=line&title=Temperature+Readings"></iframe>
+    <p>
+      🔹 Normal: 20°C – 35°C<br>
+      🔺 High (>35°C): Hot weather, possible heat stress<br>
+      🔻 Low (<20°C): Cold climate, might affect sensor accuracy
+    </p>
+  </div>
 
   <!-- Humidity -->
-  <h3 style="text-align:center; color: #0057e7;">Humidity</h3>
-  <iframe width="450" height="260" style="display: block; margin: auto;" 
-          src="https://thingspeak.com/channels/3002847/charts/2?bgcolor=%23ffffff&color=%2300aaff&dynamic=true&type=line&title=Humidity+Readings"></iframe>
-  <p style="text-align:center;">
-    🔹 Normal: 30% – 60%<br>
-    🔺 High (>60%): Humid environment, discomfort<br>
-    🔻 Low (<30%): Dry air, potential for respiratory discomfort
-  </p>
+  <div class="card">
+    <h3>Humidity</h3>
+    <iframe width="100%" height="260" src="https://thingspeak.com/channels/3002847/charts/2?bgcolor=%23ffffff&color=%2300aaff&dynamic=true&type=line&title=Humidity+Readings"></iframe>
+    <p>
+      🔹 Normal: 30% – 60%<br>
+      🔺 High (>60%): Humid environment, discomfort<br>
+      🔻 Low (<30%): Dry air, potential for respiratory discomfort
+    </p>
+  </div>
 
   <!-- Gas Concentration -->
-  <h3 style="text-align:center; color: #0057e7;">Gas Concentration</h3>
-  <iframe width="450" height="260" style="display: block; margin: auto;" 
-          src="https://thingspeak.com/channels/3002847/charts/4?bgcolor=%23ffffff&color=%2300cc44&dynamic=true&type=line&title=Gas+Concentration+Levels"></iframe>
-  <p style="text-align:center;">
-    🔹 Normal: 0 – 300 ppm<br>
-    ⚠️ Moderate (300–600 ppm): Poor air quality<br>
-    🔺 High (>600 ppm): Dangerous gas levels, health risk
-  </p>
+  <div class="card">
+    <h3>Gas Concentration</h3>
+    <iframe width="100%" height="260" src="https://thingspeak.com/channels/3002847/charts/4?bgcolor=%23ffffff&color=%2300cc44&dynamic=true&type=line&title=Gas+Concentration+Levels"></iframe>
+    <p>
+      🔹 Normal: 0 – 300 ppm<br>
+      ⚠️ Moderate (300–600 ppm): Poor air quality<br>
+      🔺 High (>600 ppm): Dangerous gas levels, health risk
+    </p>
+  </div>
 
   <!-- Turbidity -->
-  <h3 style="text-align:center; color: #0057e7;">Turbidity</h3>
-  <iframe width="450" height="260" style="display: block; margin: auto;" 
-          src="https://thingspeak.com/channels/3002927/charts/3?bgcolor=%23ffffff&color=%23aa00ff&dynamic=true&type=line&title=Turbidity+Level"></iframe>
-  <p style="text-align:center;">
-    🔹 Low (<5 NTU): Clean water<br>
-    ⚠️ Moderate (5–50 NTU): Acceptable for use but not ideal<br>
-    🔺 High (>50 NTU): Highly turbid, unsafe for consumption
-  </p>
+  <div class="card">
+    <h3>Turbidity</h3>
+    <iframe width="100%" height="260" src="https://thingspeak.com/channels/3002927/charts/3?bgcolor=%23ffffff&color=%23aa00ff&dynamic=true&type=line&title=Turbidity+Level"></iframe>
+    <p>
+      🔹 Low (<5 NTU): Clean water<br>
+      ⚠️ Moderate (5–50 NTU): Acceptable for use but not ideal<br>
+      🔺 High (>50 NTU): Highly turbid, unsafe for consumption
+    </p>
+  </div>
 </section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Environmental Monitoring Team</p>
+</footer>
+
+</body>
+</html>
