@@ -2,67 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About - Hardware</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="about_style.css" />
+  <title>About Hardware</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="about_style.css">
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <h2>Environment Monitor</h2>
-    <ul id="nav-links">
+    <ul>
       <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        <a class="active">About ▾</a>
-        <div class="dropdown-content">
-          <a href="about_hardware.html" class="active">Hardware</a>
-          <a href="about_software.html">Software</a>
-        </div>
-      </li>
-      <li><a href="thingspeak.html">ThingSpeak</a></li>
+      <li><a href="about_hardware.html" class="active">About</a></li>
       <li><a href="team.html">Team</a></li>
+      <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="signin.html">Sign In</a></li>
     </ul>
   </nav>
 
-  <header>
-    <h1>Hardware Components</h1>
-  </header>
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="page-title">Hardware Used</h1>
 
-  <section class="container">
     <div class="card">
       <h3>DHT11 – Temperature & Humidity Sensor</h3>
       <input type="file" accept="image/*" onchange="previewImage(event, 'img1', 'img1Data')">
-      <br><img id="img1" class="preview-img" src="" alt="DHT11 Sensor" />
+      <img id="img1" class="preview-img" src="" alt="DHT11 Sensor" />
     </div>
 
     <div class="card">
       <h3>MQ2 – Gas Sensor</h3>
       <input type="file" accept="image/*" onchange="previewImage(event, 'img2', 'img2Data')">
-      <br><img id="img2" class="preview-img" src="" alt="MQ2 Gas Sensor" />
+      <img id="img2" class="preview-img" src="" alt="MQ2 Gas Sensor" />
     </div>
 
     <div class="card">
       <h3>Turbidity Sensor</h3>
       <input type="file" accept="image/*" onchange="previewImage(event, 'img3', 'img3Data')">
-      <br><img id="img3" class="preview-img" src="" alt="Turbidity Sensor" />
+      <img id="img3" class="preview-img" src="" alt="Turbidity Sensor" />
     </div>
 
     <div class="card">
       <h3>ESP8266 Wi-Fi Module</h3>
       <input type="file" accept="image/*" onchange="previewImage(event, 'img4', 'img4Data')">
-      <br><img id="img4" class="preview-img" src="" alt="ESP8266 WiFi Module" />
+      <img id="img4" class="preview-img" src="" alt="ESP8266 WiFi Module" />
     </div>
 
     <div class="card">
       <h3>Arduino Uno</h3>
       <input type="file" accept="image/*" onchange="previewImage(event, 'img5', 'img5Data')">
-      <br><img id="img5" class="preview-img" src="" alt="Arduino Uno" />
+      <img id="img5" class="preview-img" src="" alt="Arduino Uno Board" />
     </div>
-  </section>
+  </div>
 
   <footer>
     <p>© 2025 Environment Monitoring Team</p>
@@ -80,15 +72,14 @@
     }
 
     window.onload = function () {
-      const images = ['img1', 'img2', 'img3', 'img4', 'img5'];
-      images.forEach((imgId) => {
-        const saved = localStorage.getItem(imgId + 'Data');
+      const ids = ['img1', 'img2', 'img3', 'img4', 'img5'];
+      ids.forEach((id) => {
+        const saved = localStorage.getItem(id + 'Data');
         if (saved) {
-          document.getElementById(imgId).src = saved;
+          document.getElementById(id).src = saved;
         }
       });
     };
   </script>
-
 </body>
 </html>
