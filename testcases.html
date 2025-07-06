@@ -4,16 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Test Cases</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
 
     .navbar {
@@ -73,21 +69,16 @@
       background-color: #f0f0f0;
     }
 
-    .center-wrapper {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
     .container {
       max-width: 1000px;
-      width: 100%;
+      margin: 40px auto;
       background-color: white;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     h1 {
@@ -98,6 +89,8 @@
 
     .testcase {
       margin-bottom: 40px;
+      width: 80%;
+      text-align: center;
     }
 
     .testcase h2 {
@@ -107,7 +100,7 @@
 
     .testcase input[type="file"] {
       display: block;
-      margin-bottom: 10px;
+      margin: 0 auto 10px auto;
     }
 
     .testcase textarea {
@@ -120,18 +113,26 @@
       font-size: 14px;
     }
 
+    .preview-img {
+      margin-top: 10px;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
     footer {
       background-color: #eaeaea;
       color: #333;
       text-align: center;
       padding: 15px;
       font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -150,28 +151,28 @@
     </ul>
   </nav>
 
-  <!-- Centered Test Cases Section -->
-  <div class="center-wrapper">
-    <div class="container">
-      <h1>Test Cases</h1>
+  <div class="container">
+    <h1>Test Cases</h1>
 
-      <div class="testcase">
-        <h2>Test Case 1: Polluted Water</h2>
-        <input type="file" accept="image/*" />
-        <textarea placeholder="Enter description or observation..."></textarea>
-      </div>
+    <div class="testcase" id="tc1">
+      <h2>Test Case 1: Polluted Water</h2>
+      <input type="file" accept="image/*" onchange="previewImage(this, 'img1', 'tc1')" />
+      <img id="img1" class="preview-img" />
+      <textarea placeholder="Enter description or observation..."></textarea>
+    </div>
 
-      <div class="testcase">
-        <h2>Test Case 2: Usable Water</h2>
-        <input type="file" accept="image/*" />
-        <textarea placeholder="Enter description or observation..."></textarea>
-      </div>
+    <div class="testcase" id="tc2">
+      <h2>Test Case 2: Usable Water</h2>
+      <input type="file" accept="image/*" onchange="previewImage(this, 'img2', 'tc2')" />
+      <img id="img2" class="preview-img" />
+      <textarea placeholder="Enter description or observation..."></textarea>
+    </div>
 
-      <div class="testcase">
-        <h2>Test Case 3: Drinking Water</h2>
-        <input type="file" accept="image/*" />
-        <textarea placeholder="Enter description or observation..."></textarea>
-      </div>
+    <div class="testcase" id="tc3">
+      <h2>Test Case 3: Drinking Water</h2>
+      <input type="file" accept="image/*" onchange="previewImage(this, 'img3', 'tc3')" />
+      <img id="img3" class="preview-img" />
+      <textarea placeholder="Enter description or observation..."></textarea>
     </div>
   </div>
 
@@ -179,5 +180,29 @@
     <p>© 2025 Environment Monitoring Team – All rights reserved</p>
   </footer>
 
+  <script>
+    function previewImage(input, imgId, storageKey) {
+      const file = input.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const dataUrl = e.target.result;
+          document.getElementById(imgId).src = dataUrl;
+          localStorage.setItem(storageKey, dataUrl);
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Load stored images on page load
+    window.onload = function () {
+      ['tc1', 'tc2', 'tc3'].forEach((id, index) => {
+        const dataUrl = localStorage.getItem(id);
+        if (dataUrl) {
+          document.getElementById('img' + (index + 1)).src = dataUrl;
+        }
+      });
+    };
+  </script>
 </body>
 </html>
