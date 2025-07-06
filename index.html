@@ -11,8 +11,8 @@
   <!-- Navbar -->
   <nav class="navbar">
     <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about_hardware.html">About</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
@@ -21,36 +21,32 @@
     </ul>
   </nav>
 
-  <!-- Home Section -->
-  <section id="home" class="hero fade-in">
-    <h1>Air & Water Quality Monitoring</h1>
-    <p>Monitoring Environmental Conditions Using Sensors & IoT</p>
-  </section>
+  <!-- Container -->
+  <div class="container">
+    <h1 class="page-title">Air & Water Quality Monitoring</h1>
+    <p class="subtitle">Monitoring Environmental Conditions Using Sensors & IoT</p>
 
-  <!-- Problem Statement -->
-  <section class="section fade-in">
-    <h2>Problem Statement</h2>
-    <p>Air and water quality index and environment monitoring.</p>
-  </section>
+    <div class="card">
+      <h3>Problem Statement</h3>
+      <p>Air and water quality index and environment monitoring.</p>
+    </div>
 
-  <!-- Solution -->
-  <section class="section fade-in">
-    <h2>Our Solution</h2>
-    <p>We prepared a prototype using sensors like DHT11, Turbidity Sensor, and MQ135 to measure temperature, humidity, turbidity of water, and gas concentrations. The data is collected using Arduino and ESP8266 and pushed to the cloud using ThingSpeak.</p>
-  </section>
+    <div class="card">
+      <h3>Our Solution</h3>
+      <p>We prepared a prototype using sensors like DHT11, Turbidity Sensor, and MQ135 to measure temperature, humidity, turbidity of water, and gas concentrations. The data is collected using Arduino and ESP8266 and pushed to the cloud using ThingSpeak.</p>
+    </div>
 
-  <!-- Uniqueness -->
-  <section class="section fade-in">
-    <h2>Uniqueness</h2>
-    <p>This project combines real-time monitoring, IoT integration, and cloud-based visualization to create a low-cost and effective environmental tracking system.</p>
-  </section>
+    <div class="card">
+      <h3>Uniqueness</h3>
+      <p>This project combines real-time monitoring, IoT integration, and cloud-based visualization to create a low-cost and effective environmental tracking system.</p>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Environmental Monitoring Team</p>
   </footer>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
