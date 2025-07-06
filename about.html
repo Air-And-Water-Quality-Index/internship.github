@@ -8,52 +8,7 @@
   <style>
     body {
       background-color: #e6f0ff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .navbar {
-      background-color: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .navbar h2 {
-      margin: 0;
-      color: #003366;
-    }
-
-    .nav-toggle {
-      display: none;
-    }
-
-    #nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    #nav-links li a {
-      text-decoration: none;
-      color: #003366; /* DARK BLUE */
-      font-weight: bold;
-    }
-
-    #nav-links li a.active {
-      text-decoration: underline;
-    }
-
-    header, section {
-      text-align: center;
-      margin: 40px auto;
-    }
-
-    h1, h2 {
-      color: #003366;
+      font-family: Arial, sans-serif;
     }
 
     .hardware-list {
@@ -67,23 +22,52 @@
     }
 
     .hardware-item img {
-      max-width: 250px;
+      max-width: 300px;
       height: auto;
       margin-top: 10px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
-    footer {
+    header, section {
       text-align: center;
-      padding: 20px;
-      background-color: white;
-      color: #003366;
-      margin-top: 50px;
+      margin: 40px auto;
     }
 
-    input[type="file"] {
-      margin-top: 10px;
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .navbar {
+      background-color: #fff;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .navbar h2 {
+      margin: 0;
+      color: #003366;
+    }
+
+    #nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    #nav-links li a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 10px;
     }
   </style>
 </head>
@@ -114,28 +98,28 @@
     <ul class="hardware-list">
       <li class="hardware-item">
         <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
-        <img id="img1" src="images/dht11.jpg" alt="DHT11 Sensor" /><br>
-        <input type="file" accept="image/*" onchange="loadImage(event, 'img1')" />
+        <img id="dht11-preview" src="" alt="DHT11 Sensor" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'dht11')" />
       </li>
       <li class="hardware-item">
         <strong>MQ2 – Gas Sensor</strong><br>
-        <img id="img2" src="images/mq2.jpg" alt="MQ2 Gas Sensor" /><br>
-        <input type="file" accept="image/*" onchange="loadImage(event, 'img2')" />
+        <img id="mq2-preview" src="" alt="MQ2 Gas Sensor" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'mq2')" />
       </li>
       <li class="hardware-item">
         <strong>Turbidity Sensor</strong><br>
-        <img id="img3" src="images/turbidity.jpg" alt="Turbidity Sensor" /><br>
-        <input type="file" accept="image/*" onchange="loadImage(event, 'img3')" />
+        <img id="turbidity-preview" src="" alt="Turbidity Sensor" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'turbidity')" />
       </li>
       <li class="hardware-item">
         <strong>ESP8266 Wi-Fi Module</strong><br>
-        <img id="img4" src="images/esp8266.jpg" alt="ESP8266 WiFi Module" /><br>
-        <input type="file" accept="image/*" onchange="loadImage(event, 'img4')" />
+        <img id="esp8266-preview" src="" alt="ESP8266 WiFi Module" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'esp8266')" />
       </li>
       <li class="hardware-item">
         <strong>Arduino Uno</strong><br>
-        <img id="img5" src="images/arduino.jpg" alt="Arduino Uno Board" /><br>
-        <input type="file" accept="image/*" onchange="loadImage(event, 'img5')" />
+        <img id="arduino-preview" src="" alt="Arduino Uno Board" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'arduino')" />
       </li>
     </ul>
   </section>
@@ -159,11 +143,29 @@
       document.getElementById("nav-links").classList.toggle("show");
     }
 
-    function loadImage(event, id) {
-      const output = document.getElementById(id);
-      output.src = URL.createObjectURL(event.target.files[0]);
-      output.onload = () => URL.revokeObjectURL(output.src);
+    function previewAndSaveImage(event, key) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const imgData = e.target.result;
+        localStorage.setItem(key + "-image", imgData);
+        document.getElementById(key + "-preview").src = imgData;
+      };
+      reader.readAsDataURL(file);
     }
+
+    window.onload = function () {
+      const keys = ["dht11", "mq2", "turbidity", "esp8266", "arduino"];
+      keys.forEach(key => {
+        const savedImg = localStorage.getItem(key + "-image");
+        if (savedImg) {
+          const imgEl = document.getElementById(key + "-preview");
+          if (imgEl) imgEl.src = savedImg;
+        }
+      });
+    };
   </script>
 </body>
 </html>
