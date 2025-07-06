@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>ThingSpeak Data</title>
-  <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS -->
+  <link rel="stylesheet" href="style.css"> <!-- Use your global CSS -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-size: 20px; /* Large text */
+      font-size: 20px;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -56,57 +56,6 @@
       margin-bottom: 30px;
     }
 
-    nav.navbar ul {
-      display: flex;
-      list-style: none;
-      padding: 10px 20px;
-      background-color: #333;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0;
-    }
-
-    nav.navbar ul li {
-      margin: 0 10px;
-      position: relative;
-    }
-
-    nav.navbar ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    nav.navbar ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 10px;
-      top: 100%;
-      left: 0;
-      z-index: 999;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      color: black;
-      text-decoration: none;
-      padding: 8px 12px;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f0f0f0;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -129,7 +78,7 @@
       </div>
     </li>
     <li><a href="team.html">Team</a></li>
-    <li><a href="thingspeak.html">ThingSpeak</a></li>
+    <li><a href="thingspeak.html" class="active">ThingSpeak</a></li>
     <li><a href="testcases.html">Test Cases</a></li>
     <li><a href="login.html">Login</a></li>
     <li><a href="signin.html">Sign In</a></li>
