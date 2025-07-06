@@ -14,11 +14,14 @@
       background-color: #f4f4f4;
     }
 
+    .navbar {
+      background-color: navy;
+    }
+
     .navbar ul {
       display: flex;
       list-style: none;
       padding: 10px 20px;
-      background-color: #333;
       justify-content: center;
       margin: 0;
       flex-wrap: wrap;
@@ -33,6 +36,13 @@
       color: white;
       text-decoration: none;
       font-size: 18px;
+      padding: 8px 12px;
+      display: block;
+    }
+
+    .navbar ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
     }
 
     .dropdown-content {
@@ -96,13 +106,6 @@
       text-align: center;
     }
 
-    .card img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
     .card h3 {
       font-size: 24px;
       margin-bottom: 10px;
@@ -119,69 +122,3 @@
       padding: 20px;
       background-color: #f2f2f2;
       font-size: 18px;
-    }
-  </style>
-</head>
-<body>
-
-<!-- Navbar -->
-<nav class="navbar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li class="dropdown">
-      <a href="#" class="dropbtn">About</a>
-      <div class="dropdown-content">
-        <a href="about_hardware.html">Hardware</a>
-        <a href="about_software.html">Software</a>
-      </div>
-    </li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="thingspeak.html">ThingSpeak</a></li>
-    <li><a href="testcases.html">Test Cases</a></li>
-    <li><a href="login.html">Login</a></li>
-    <li><a href="signin.html">Sign In</a></li>
-  </ul>
-</nav>
-
-<!-- Test Cases Section -->
-<section class="section fade-in">
-  <h2>Test Cases</h2>
-
-  <!-- Previous Bullet Points -->
-  <ul>
-    <li>Sensor data successfully read and uploaded to ThingSpeak</li>
-    <li>Alerts generated when air quality drops below safe levels</li>
-    <li>Responsive design tested on multiple screen sizes</li>
-  </ul>
-
-  <br><br>
-
-  <!-- Test Case Cards -->
-
-  <!-- Polluted Water -->
-  <div class="card">
-    <h3>Polluted Water</h3>
-    <input type="file" accept="image/*">
-  </div>
-
-  <!-- Usable Water -->
-  <div class="card">
-    <h3>Usable Water</h3>
-    <input type="file" accept="image/*">
-  </div>
-
-  <!-- Drinking Water -->
-  <div class="card">
-    <h3>Drinking Water</h3>
-    <input type="file" accept="image/*">
-  </div>
-
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>© 2025 Environmental Monitoring Team</p>
-</footer>
-
-</body>
-</html>
