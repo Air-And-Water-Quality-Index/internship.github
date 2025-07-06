@@ -13,7 +13,6 @@
       padding: 0;
     }
 
-    /* --- NAVBAR STYLE from team page --- */
     .navbar {
       background-color: navy;
     }
@@ -71,7 +70,14 @@
       background-color: #f0f0f0;
     }
 
-    /* --- PAGE CONTENT STYLING --- */
+    .center-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 80vh;
+    }
+
     .container {
       max-width: 1000px;
       margin: 40px auto;
@@ -142,26 +148,28 @@
     </ul>
   </nav>
 
-  <!-- Test Cases Section -->
-  <div class="container">
-    <h1>Test Cases</h1>
+  <!-- Centered Test Cases Section -->
+  <div class="center-wrapper">
+    <div class="container">
+      <h1>Test Cases</h1>
 
-    <div class="testcase">
-      <h2>Test Case 1: Polluted Water</h2>
-      <input type="file" accept="image/*" />
-      <textarea placeholder="Enter description or observation..."></textarea>
-    </div>
+      <div class="testcase">
+        <h2>Test Case 1: Polluted Water</h2>
+        <input type="file" accept="image/*" />
+        <textarea placeholder="Enter description or observation..."></textarea>
+      </div>
 
-    <div class="testcase">
-      <h2>Test Case 2: Usable Water</h2>
-      <input type="file" accept="image/*" />
-      <textarea placeholder="Enter description or observation..."></textarea>
-    </div>
+      <div class="testcase">
+        <h2>Test Case 2: Usable Water</h2>
+        <input type="file" accept="image/*" />
+        <textarea placeholder="Enter description or observation..."></textarea>
+      </div>
 
-    <div class="testcase">
-      <h2>Test Case 3: Drinking Water</h2>
-      <input type="file" accept="image/*" />
-      <textarea placeholder="Enter description or observation..."></textarea>
+      <div class="testcase">
+        <h2>Test Case 3: Drinking Water</h2>
+        <input type="file" accept="image/*" />
+        <textarea placeholder="Enter description or observation..."></textarea>
+      </div>
     </div>
   </div>
 
