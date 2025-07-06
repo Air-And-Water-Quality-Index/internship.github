@@ -42,18 +42,17 @@
     #nav-links a {
       color: white;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 16px;
       padding: 8px 12px;
       border-radius: 6px;
-      transition: background-color 0.3s, color 0.3s;
-      background-color: transparent;
+      background-color: #3399ff;
+      transition: background-color 0.3s;
     }
 
     #nav-links a:hover,
     #nav-links a.active {
-      background-color: #ffffff;
-      color: #004d99;
+      background-color: #004d99;
     }
 
     header, section {
@@ -121,28 +120,28 @@
     <ul class="hardware-list">
       <li class="hardware-item">
         <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img1')">
-        <br><img id="img1" class="preview-img" src="images/dht11.jpg" alt="DHT11 Sensor" />
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img1', 'img1Data')">
+        <br><img id="img1" class="preview-img" src="" alt="DHT11 Sensor" />
       </li>
       <li class="hardware-item">
         <strong>MQ2 – Gas Sensor</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img2')">
-        <br><img id="img2" class="preview-img" src="images/mq2.jpg" alt="MQ2 Gas Sensor" />
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img2', 'img2Data')">
+        <br><img id="img2" class="preview-img" src="" alt="MQ2 Gas Sensor" />
       </li>
       <li class="hardware-item">
         <strong>Turbidity Sensor</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img3')">
-        <br><img id="img3" class="preview-img" src="images/turbidity.jpg" alt="Turbidity Sensor" />
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img3', 'img3Data')">
+        <br><img id="img3" class="preview-img" src="" alt="Turbidity Sensor" />
       </li>
       <li class="hardware-item">
         <strong>ESP8266 Wi-Fi Module</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img4')">
-        <br><img id="img4" class="preview-img" src="images/esp8266.jpg" alt="ESP8266 WiFi Module" />
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img4', 'img4Data')">
+        <br><img id="img4" class="preview-img" src="" alt="ESP8266 WiFi Module" />
       </li>
       <li class="hardware-item">
         <strong>Arduino Uno</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img5')">
-        <br><img id="img5" class="preview-img" src="images/arduino.jpg" alt="Arduino Uno Board" />
+        <input type="file" accept="image/*" onchange="previewImage(event, 'img5', 'img5Data')">
+        <br><img id="img5" class="preview-img" src="" alt="Arduino Uno Board" />
       </li>
     </ul>
   </section>
@@ -162,15 +161,29 @@
   </footer>
 
   <script>
-    function previewImage(event, id) {
+    function previewImage(event, imgId, storageKey) {
       const reader = new FileReader();
       reader.onload = function () {
-        const output = document.getElementById(id);
-        output.src = reader.result;
+        const dataURL = reader.result;
+        document.getElementById(imgId).src = dataURL;
+        localStorage.setItem(storageKey, dataURL); // Save to localStorage
       };
       reader.readAsDataURL(event.target.files[0]);
     }
+
+    // On page load, load saved images from localStorage
+    window.onload = function () {
+      const images = ['img1', 'img2', 'img3', 'img4', 'img5'];
+      images.forEach((imgId, index) => {
+        const key = imgId + 'Data';
+        const saved = localStorage.getItem(key);
+        if (saved) {
+          document.getElementById(imgId).src = saved;
+        }
+      });
+    };
   </script>
 
 </body>
 </html>
+
