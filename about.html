@@ -1,45 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>About</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .hardware-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .hardware-item {
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .hardware-item input[type="file"] {
-      margin-top: 10px;
-    }
-
-    header, section {
-      text-align: center;
-      margin: 40px auto;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>About | Air & Water Quality Monitoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar">
-    <h2>Environment Monitor</h2>
-    <div class="nav-toggle" onclick="toggleNav()" role="button" tabindex="0" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </div>
-    <ul id="nav-links">
+    <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
+      <li><a class="active" href="about.html">About</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
@@ -48,54 +21,36 @@
     </ul>
   </nav>
 
-  <header>
-    <h1>About Our Project</h1>
-  </header>
+  <!-- About Section -->
+  <section class="section fade-in">
+    <h2 style="text-align: center;">About Our Project</h2>
 
-  <section>
-    <h2>Hardware</h2>
-    <ul class="hardware-list">
-      <li class="hardware-item">
-        <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
-        <input type="file" accept="image/*">
-      </li>
-      <li class="hardware-item">
-        <strong>MQ2 – Gas Sensor</strong><br>
-        <input type="file" accept="image/*">
-      </li>
-      <li class="hardware-item">
-        <strong>Turbidity Sensor</strong><br>
-        <input type="file" accept="image/*">
-      </li>
-      <li class="hardware-item">
-        <strong>ESP8266 Wi-Fi Module</strong><br>
-        <input type="file" accept="image/*">
-      </li>
-      <li class="hardware-item">
-        <strong>Arduino Uno</strong><br>
-        <input type="file" accept="image/*">
-      </li>
-    </ul>
-  </section>
+    <h3>Hardware</h3>
 
-  <section>
-    <h2>Software</h2>
-    <ul>
-      <li>Arduino IDE</li>
-      <li>ThingSpeak</li>
-      <li>HTML, CSS, JS</li>
-      <li>GitHub</li>
-    </ul>
+    <div class="hardware-item">
+      <h4>DHT11 – Temperature & Humidity Sensor</h4>
+      <img src="images/dht11.jpg" alt="DHT11 Sensor">
+    </div>
+
+    <div class="hardware-item">
+      <h4>MQ2 – Gas Sensor</h4>
+      <img src="images/mq2.jpg" alt="MQ2 Gas Sensor">
+    </div>
+
+    <div class="hardware-item">
+      <h4>Turbidity Sensor</h4>
+      <img src="images/turbidity.jpg" alt="Turbidity Sensor">
+    </div>
+
+    <div class="hardware-item">
+      <h4>ESP8266 Wi-Fi Module</h4>
+      <img src="images/esp8266.jpg" alt="ESP8266 Module">
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Environment Monitoring Team</p>
+    <p>© 2025 Environmental Monitoring Team</p>
   </footer>
 
-  <script>
-    function toggleNav() {
-      document.getElementById("nav-links").classList.toggle("show");
-    }
-  </script>
 </body>
 </html>
