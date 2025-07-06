@@ -9,63 +9,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-    }
-
-    .hardware-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 1000px;
-    }
-
-    .hardware-item {
-      margin-bottom: 60px;
-      text-align: center;
-      width: 100%;
-    }
-
-    .hardware-item img {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease;
-    }
-
-    .hardware-item img:hover {
-      transform: scale(1.05);
-    }
-
-    header, section {
-      text-align: center;
-      margin: 50px auto;
-      max-width: 1000px;
-    }
-
-    h1 {
-      font-size: 36px;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 20px;
-    }
-
-    footer {
-      text-align: center;
-      margin: 50px auto;
-      font-size: 16px;
+      background-color: #f8f9fa;
     }
 
     .navbar {
@@ -101,15 +45,67 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
-      .hardware-item img {
-        max-width: 90%;
-      }
+    header, section {
+      text-align: center;
+      padding: 40px 20px;
+    }
 
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .hardware-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .hardware-item {
+      text-align: center;
+    }
+
+    .hardware-item strong {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .hardware-item img {
+      max-width: 500px;
+      width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    ul.software-list {
+      list-style: none;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 16px;
+      background-color: #eee;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
       #nav-links {
-        flex-direction: column;
         display: none;
-        margin-top: 15px;
+        flex-direction: column;
+        margin-top: 10px;
       }
 
       #nav-links.show {
@@ -134,4 +130,21 @@
 <body>
 
   <nav class="navbar">
-    <h2>Environme
+    <h2>Environment Monitor</h2>
+    <div class="nav-toggle" onclick="toggleNav()" role="button" tabindex="0" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="thingspeak.html">ThingSpeak</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="testcases.html">Test Cases</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>About Our Project</h1>
+  </he
