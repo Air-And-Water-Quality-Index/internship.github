@@ -1,61 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ThingSpeak Data</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .chart-container {
-      text-align: center;
-      margin: 40px auto;
-      max-width: 800px;
-    }
+<!-- Temperature -->
+<h3 style="color: blue;">Temperature</h3>
+<iframe width="450" height="260" style="border: 1px solid #ccc;" src="https://thingspeak.com/channels/XXXXX/widgets/YYYY"></iframe>
+<div class="sensor-info">
+  <strong>Expected Range:</strong> 15°C – 35°C<br>
+  <strong>Min:</strong> Below 15°C → Cold conditions<br>
+  <strong>Max:</strong> Above 35°C → Hot or heatwave conditions<br>
+  <em>Impacts:</em> Temperature below 15°C can lead to discomfort or foggy weather. Above 35°C may indicate heat stress and requires hydration and shelter.
+</div>
 
-    iframe {
-      border: none;
-      width: 100%;
-      height: 300px;
-      margin-top: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+<!-- Humidity -->
+<h3 style="color: blue;">Humidity</h3>
+<iframe width="450" height="260" style="border: 1px solid #ccc;" src="https://thingspeak.com/channels/XXXXX/widgets/YYYY"></iframe>
+<div class="sensor-info">
+  <strong>Expected Range:</strong> 30% – 70%<br>
+  <strong>Min:</strong> Below 30% → Dry air<br>
+  <strong>Max:</strong> Above 70% → High humidity<br>
+  <em>Impacts:</em> Low humidity causes dry skin and throat. High humidity indicates chances of rainfall or discomfort in summer.
+</div>
 
-    h2 {
-      margin-top: 50px;
-      color: #007BFF;
-    }
+<!-- Gas Concentration -->
+<h3 style="color: blue;">Gas Concentration</h3>
+<iframe width="450" height="260" style="border: 1px solid #ccc;" src="https://thingspeak.com/channels/XXXXX/widgets/YYYY"></iframe>
+<div class="sensor-info">
+  <strong>Expected Range:</strong> 200 – 400 ppm<br>
+  <strong>Min:</strong> Below 200 ppm → Clean air<br>
+  <strong>Max:</strong> Above 400 ppm → Polluted air<br>
+  <em>Impacts:</em> High gas concentration (e.g., CO₂, CO, or VOCs) can lead to breathing discomfort, especially in closed environments.
+</div>
 
-    header, footer {
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>ThingSpeak Data</h1>
-    <p>Live Sensor Readings from IoT Device</p>
-  </header>
-
-  <div class="chart-container">
-    <h2>Temperature</h2>
-    <iframe src="https://thingspeak.com/channels/3002847/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&type=line&title=Temperature+Readings"></iframe>
-    <p style="text-align: center;">Range  </p>
-
-    <h2>Humidity</h2>
-    <iframe src="https://thingspeak.com/channels/3002847/charts/2?bgcolor=%23ffffff&color=%23007BFF&dynamic=true&type=line&title=Humidity+Readings"></iframe>
-
-    <h2>Gas Concentration</h2>
-    <iframe src="https://thingspeak.com/channels/3002847/charts/4?bgcolor=%23ffffff&color=%2300cc44&dynamic=true&type=line&title=Gas+Concentration+Levels"></iframe>
-
-    <h2>Turbidity</h2>
-    <iframe src="https://thingspeak.com/channels/3002927/charts/3?bgcolor=%23ffffff&color=%23aa00ff&dynamic=true&type=line&title=Turbidity+Levels"></iframe>
-  </div>
-
-  <footer>
-    <p>Air & Water Quality Monitoring • ThingSpeak Visualization © 2025</p>
-  </footer>
-
-</body>
-</html>
+<!-- Turbidity -->
+<h3 style="color: blue;">Turbidity</h3>
+<iframe width="450" height="260" style="border: 1px solid #ccc;" src="https://thingspeak.com/channels/XXXXX/widgets/YYYY"></iframe>
+<div class="sensor-info">
+  <strong>Expected Range:</strong> 0 – 5 NTU (Nephelometric Turbidity Units)<br>
+  <strong>Min:</strong> 0 NTU → Clear water<br>
+  <strong>Max:</strong> Above 5 NTU → Cloudy/contaminated water<br>
+  <em>Impacts:</em> High turbidity may indicate suspended particles, pollutants, or unsafe drinking water.
+</div>
+.sensor-info {
+  background: #f0f8ff;
+  border-left: 4px solid #0077cc;
+  padding: 12px 20px;
+  margin: 10px 0 30px;
+  max-width: 480px;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  border-radius: 8px;
+}
