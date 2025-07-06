@@ -1,56 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About | Air & Water Quality Monitoring</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <title>About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hardware-list {
+      list-style: none;
+      padding: 0;
+    }
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="about.html">About</a></li>
-      <li><a href="thingspeak.html">ThingSpeak</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="testcases.html">Test Cases</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="signin.html">Sign In</a></li>
-    </ul>
-  </nav>
+    .hardware-item {
+      margin-bottom: 40px;
+      text-align: center;
+    }
 
-  <!-- About Section -->
-  <section class="section fade-in">
-    <h2 style="text-align: center;">About Our Project</h2>
+    .hardware-item input[type="file"] {
+      margin-top: 10px;
+    }
 
-    <h3>Hardware</h3>
-
-    <div class="hardware-item">
-      <h4>DHT11 – Temperature & Humidity Sensor</h4>
-      <img src="images/dht11.jpg" alt="DHT11 Sensor">
-    </div>
-
-    <div class="hardware-item">
-      <h4>MQ2 – Gas Sensor</h4>
-      <img src="images/mq2.jpg" alt="MQ2 Gas Sensor">
-    </div>
-
-    <div class="hardware-item">
-      <h4>Turbidity Sensor</h4>
-      <img src="images/turbidity.jpg" alt="Turbidity Sensor">
-    </div>
-
-    <div class="hardware-item">
-      <h4>ESP8266 Wi-Fi Module</h4>
-      <img src="images/esp8266.jpg" alt="ESP8266 Module">
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Environmental Monitoring Team</p>
-  </footer>
-
-</body>
-</html>
+    .hardware-item img.preview {
+      display: block;
+      margin: 10px auto 0;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px
