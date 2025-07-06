@@ -7,53 +7,26 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      background-color: #e6f2ff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
+      background-color: #e6f0ff;
+      font-family: Arial, sans-serif;
     }
 
-    .navbar {
-      background-color: #0066cc;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .navbar h2 {
-      color: white;
-      margin: 0;
-    }
-
-    #nav-links {
-      display: flex;
-      flex-wrap: wrap;
+    .hardware-list {
       list-style: none;
       padding: 0;
-      margin: 0;
     }
 
-    #nav-links li {
-      margin: 0 10px;
+    .hardware-item {
+      margin-bottom: 30px;
+      text-align: center;
     }
 
-    #nav-links a {
-      color: navy;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-      background-color: transparent; /* No background to see navy text clearly */
-    }
-
-    #nav-links a:hover,
-    #nav-links a.active {
-      background-color: #ffffff;
-      color: #004d99;
+    .hardware-item img {
+      max-width: 300px;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
     header, section {
@@ -65,35 +38,36 @@
       margin-bottom: 20px;
     }
 
-    .hardware-list {
+    .navbar {
+      background-color: #fff;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .navbar h2 {
+      margin: 0;
+      color: #003366;
+    }
+
+    #nav-links {
       list-style: none;
-      padding: 0;
+      display: flex;
+      gap: 15px;
     }
 
-    .hardware-item {
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    input[type="file"] {
-      margin-top: 10px;
-    }
-
-    .preview-img {
-      max-width: 300px;
-      margin-top: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    #nav-links li a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
     }
 
     footer {
-      background-color: #0066cc;
-      color: white;
       text-align: center;
-      padding: 10px 0;
-      position: relative;
-      bottom: 0;
-      width: 100%;
+      margin-top: 40px;
+      padding: 10px;
     }
   </style>
 </head>
@@ -101,6 +75,9 @@
 
   <nav class="navbar">
     <h2>Environment Monitor</h2>
+    <div class="nav-toggle" onclick="toggleNav()" role="button" tabindex="0" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </div>
     <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
@@ -121,28 +98,28 @@
     <ul class="hardware-list">
       <li class="hardware-item">
         <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img1')">
-        <br><img id="img1" class="preview-img" src="images/dht11.jpg" alt="DHT11 Sensor" />
+        <img id="dht11-preview" src="" alt="DHT11 Sensor" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'dht11')" />
       </li>
       <li class="hardware-item">
         <strong>MQ2 – Gas Sensor</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img2')">
-        <br><img id="img2" class="preview-img" src="images/mq2.jpg" alt="MQ2 Gas Sensor" />
+        <img id="mq2-preview" src="" alt="MQ2 Gas Sensor" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'mq2')" />
       </li>
       <li class="hardware-item">
         <strong>Turbidity Sensor</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img3')">
-        <br><img id="img3" class="preview-img" src="images/turbidity.jpg" alt="Turbidity Sensor" />
+        <img id="turbidity-preview" src="" alt="Turbidity Sensor" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'turbidity')" />
       </li>
       <li class="hardware-item">
         <strong>ESP8266 Wi-Fi Module</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img4')">
-        <br><img id="img4" class="preview-img" src="images/esp8266.jpg" alt="ESP8266 WiFi Module" />
+        <img id="esp8266-preview" src="" alt="ESP8266 WiFi Module" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'esp8266')" />
       </li>
       <li class="hardware-item">
         <strong>Arduino Uno</strong><br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'img5')">
-        <br><img id="img5" class="preview-img" src="images/arduino.jpg" alt="Arduino Uno Board" />
+        <img id="arduino-preview" src="" alt="Arduino Uno Board" />
+        <input type="file" accept="image/*" onchange="previewAndSaveImage(event, 'arduino')" />
       </li>
     </ul>
   </section>
@@ -162,15 +139,33 @@
   </footer>
 
   <script>
-    function previewImage(event, id) {
-      const reader = new FileReader();
-      reader.onload = function () {
-        const output = document.getElementById(id);
-        output.src = reader.result;
-      };
-      reader.readAsDataURL(event.target.files[0]);
+    function toggleNav() {
+      document.getElementById("nav-links").classList.toggle("show");
     }
-  </script>
 
+    function previewAndSaveImage(event, key) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const imgData = e.target.result;
+        localStorage.setItem(key + "-image", imgData);
+        document.getElementById(key + "-preview").src = imgData;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    window.onload = function () {
+      const keys = ["dht11", "mq2", "turbidity", "esp8266", "arduino"];
+      keys.forEach(key => {
+        const savedImg = localStorage.getItem(key + "-image");
+        if (savedImg) {
+          const imgEl = document.getElementById(key + "-preview");
+          if (imgEl) imgEl.src = savedImg;
+        }
+      });
+    };
+  </script>
 </body>
 </html>
