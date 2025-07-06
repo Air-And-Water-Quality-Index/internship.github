@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Test Cases</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
       padding: 0;
     }
 
-    /* Navbar Styling (copied from team page) */
+    /* --- NAVBAR STYLE from team page --- */
     .navbar {
       background-color: navy;
     }
@@ -71,41 +71,44 @@
       background-color: #f0f0f0;
     }
 
-    /* Your existing test case styles below (not changed) */
-    .testcases-container {
+    /* --- PAGE CONTENT STYLING --- */
+    .container {
       max-width: 1000px;
-      margin: 50px auto;
-      padding: 20px;
+      margin: 40px auto;
       background-color: white;
+      padding: 30px;
+      border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
     }
 
     h1 {
       text-align: center;
       color: #003366;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
-    table {
+    .testcase {
+      margin-bottom: 40px;
+    }
+
+    .testcase h2 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .testcase input[type="file"] {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .testcase textarea {
       width: 100%;
-      border-collapse: collapse;
-    }
-
-    table th,
-    table td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: center;
-    }
-
-    table th {
-      background-color: #003366;
-      color: white;
-    }
-
-    table tr:nth-child(even) {
-      background-color: #f9f9f9;
+      height: 100px;
+      resize: vertical;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
     }
 
     footer {
@@ -139,32 +142,27 @@
     </ul>
   </nav>
 
-  <div class="testcases-container">
+  <!-- Test Cases Section -->
+  <div class="container">
     <h1>Test Cases</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>S. No</th>
-          <th>Module</th>
-          <th>Test Case Description</th>
-          <th>Expected Result</th>
-          <th>Actual Result</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Example row -->
-        <tr>
-          <td>1</td>
-          <td>Login</td>
-          <td>User should be able to login with valid credentials</td>
-          <td>Login successful</td>
-          <td>Login successful</td>
-          <td style="color: green; font-weight: bold;">Pass</td>
-        </tr>
-        <!-- Add more rows as needed -->
-      </tbody>
-    </table>
+
+    <div class="testcase">
+      <h2>Test Case 1: Polluted Water</h2>
+      <input type="file" accept="image/*" />
+      <textarea placeholder="Enter description or observation..."></textarea>
+    </div>
+
+    <div class="testcase">
+      <h2>Test Case 2: Usable Water</h2>
+      <input type="file" accept="image/*" />
+      <textarea placeholder="Enter description or observation..."></textarea>
+    </div>
+
+    <div class="testcase">
+      <h2>Test Case 3: Drinking Water</h2>
+      <input type="file" accept="image/*" />
+      <textarea placeholder="Enter description or observation..."></textarea>
+    </div>
   </div>
 
   <footer>
