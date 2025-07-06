@@ -10,6 +10,11 @@ h1, h2 {
   color: #003366;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 /* Sticky Navbar */
 .navbar {
   background-color: #004a99;
@@ -44,7 +49,7 @@ h1, h2 {
   background-color: #0066cc;
 }
 
-/* About Section Styling */
+/* Section styling */
 .section {
   background: #ffffff;
   margin: 30px auto;
@@ -55,43 +60,20 @@ h1, h2 {
   transition: opacity 1s ease-in;
 }
 
-.section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.section li {
+.section ul li {
+  margin-bottom: 15px;
   font-size: 18px;
   color: #333;
 }
 
-/* Sensor Image and Description Layout */
-.sensor {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin: 30px 0;
-  flex-wrap: wrap;
+.section img {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 100%;
 }
 
-.sensor img {
-  max-width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.sensor p {
-  flex: 1;
-  font-size: 16px;
-  color: #333;
-}
-
-.sensor p strong {
-  font-size: 18px;
-  color: #003366;
-}
-
-/* Footer Styling */
+/* Footer (if needed later) */
 footer {
   text-align: center;
   padding: 20px;
@@ -121,17 +103,5 @@ footer {
   .navbar a {
     text-align: center;
     padding: 12px;
-  }
-
-  .sensor {
-    text-align: center;
-  }
-
-  .sensor img {
-    max-width: 150px;
-  }
-
-  .sensor p {
-    font-size: 14px;
   }
 }
