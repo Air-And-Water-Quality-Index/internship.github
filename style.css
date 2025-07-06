@@ -105,3 +105,14 @@ footer {
     padding: 12px;
   }
 }
+.sensor-info {
+  background: #f0f8ff;
+  border-left: 4px solid #0077cc;
+  padding: 12px 20px;
+  margin: 10px 0 30px;
+  max-width: 480px;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  border-radius: 8px;
+}
