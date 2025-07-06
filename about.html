@@ -26,4 +26,99 @@
       max-width: 300px;
       height: auto;
       border-radius: 10px;
-      box-shadow: 0 2px
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    header, section {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <h2>Environment Monitor</h2>
+    <div class="nav-toggle" onclick="toggleNav()" role="button" tabindex="0" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="thingspeak.html">ThingSpeak</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="testcases.html">Test Cases</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>About Our Project</h1>
+  </header>
+
+  <section>
+    <h2>Hardware</h2>
+    <ul class="hardware-list">
+      <li class="hardware-item">
+        <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'preview1')"><br>
+        <img id="preview1" class="preview" alt="Preview will appear here">
+      </li>
+      <li class="hardware-item">
+        <strong>MQ2 – Gas Sensor</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'preview2')"><br>
+        <img id="preview2" class="preview" alt="Preview will appear here">
+      </li>
+      <li class="hardware-item">
+        <strong>Turbidity Sensor</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'preview3')"><br>
+        <img id="preview3" class="preview" alt="Preview will appear here">
+      </li>
+      <li class="hardware-item">
+        <strong>ESP8266 Wi-Fi Module</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'preview4')"><br>
+        <img id="preview4" class="preview" alt="Preview will appear here">
+      </li>
+      <li class="hardware-item">
+        <strong>Arduino Uno</strong><br>
+        <input type="file" accept="image/*" onchange="previewImage(event, 'preview5')"><br>
+        <img id="preview5" class="preview" alt="Preview will appear here">
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Software</h2>
+    <ul>
+      <li>Arduino IDE</li>
+      <li>ThingSpeak</li>
+      <li>HTML, CSS, JS</li>
+      <li>GitHub</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Environment Monitoring Team</p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById("nav-links").classList.toggle("show");
+    }
+
+    function previewImage(event, previewId) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const output = document.getElementById(previewId);
+        output.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+</body>
+</html>
