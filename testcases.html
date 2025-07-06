@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Team & File Upload</title>
+  <meta charset="UTF-8">
+  <title>Test Cases - Air & Water Quality Monitoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-size: 20px;
       margin: 0;
       padding: 0;
+      background-color: #f4f4f4;
     }
 
-    /* Navbar Styling */
+    /* Navbar */
     .navbar {
       background-color: navy;
     }
@@ -70,101 +72,60 @@
       background-color: #f0f0f0;
     }
 
-    header h1 {
-      margin-top: 30px;
-      text-align: center;
-      color: #003366;
-    }
-
-    .team-container {
-      max-width: 1200px;
-      margin: 50px auto 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 0 20px;
-    }
-
-    .team-card {
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-
-    .team-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .team-card h3 {
-      margin-top: 10px;
-      color: #003366;
-    }
-
-    .team-card p {
-      margin: 8px 0;
-      font-size: 14px;
-      color: #444;
-    }
-
-    .team-card a {
-      text-decoration: none;
-      color: #0057e7;
-      font-weight: bold;
-    }
-
-    /* File Upload Section */
-    .upload-container {
-      max-width: 600px;
+    /* Section */
+    .section {
+      max-width: 1000px;
       margin: 40px auto;
-      background-color: #ffffff;
-      padding: 25px;
+      padding: 30px;
+      background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h2 {
+      font-size: 32px;
       text-align: center;
+      margin-bottom: 30px;
     }
 
-    .upload-container h2 {
-      color: #003366;
+    .section ul {
+      list-style-type: none;
+      padding-left: 0;
     }
 
-    .upload-container input[type="file"] {
-      margin-top: 20px;
-    }
-
-    .upload-container button {
-      margin-top: 20px;
-      background-color: navy;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .upload-container button:hover {
-      background-color: #001f4d;
-    }
-
-    .message {
-      margin-top: 20px;
+    .section ul li::before {
+      content: "✅";
+      margin-right: 10px;
       color: green;
     }
 
-    .error {
-      margin-top: 20px;
-      color: red;
+    /* Cards */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card input[type="file"] {
+      font-size: 16px;
+      padding: 5px;
+      margin-top: 10px;
+    }
+
+    /* Footer */
     footer {
-      background-color: #eaeaea;
-      color: #333;
       text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      margin-top: 40px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -181,63 +142,50 @@
         <a href="about_software.html">Software</a>
       </div>
     </li>
-    <li><a href="team.html" class="active">Team</a></li>
-    <li><a href="#">ThingSpeak</a></li>
-    <li><a href="#">Test Cases</a></li>
-    <li><a href="#">Login</a></li>
-    <li><a href="#">Sign In</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="thingspeak.html">ThingSpeak</a></li>
+    <li><a href="testcases.html">Test Cases</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="signin.html">Sign In</a></li>
   </ul>
 </nav>
 
-<header>
-  <h1>Meet Our Team</h1>
-</header>
+<!-- Test Cases Section -->
+<section class="section fade-in">
+  <h2>Test Cases</h2>
 
-<!-- Team Cards -->
-<section class="team-container">
-  <div class="team-card">
-    <h3>Nagula Aishwarya</h3>
-    <p>Email: b24ec140@kitsw.ac.in</p>
-    <p><a href="https://github.com/Aishwarya-ui-sys" target="_blank">GitHub Portfolio</a></p>
+  <!-- Previous Test Case Bullets -->
+  <ul>
+    <li>Sensor data successfully read and uploaded to ThingSpeak</li>
+    <li>Alerts generated when air quality drops below safe levels</li>
+    <li>Responsive design tested on multiple screen sizes</li>
+  </ul>
+
+  <br><br>
+
+  <!-- Test Case 1 -->
+  <div class="card">
+    <h3>Polluted Water</h3>
+    <input type="file" accept="image/*">
   </div>
 
-  <div class="team-card">
-    <h3>Karimilla Neha Lakshmi</h3>
-    <p>Email: b24ec144@kitsw.ac.in</p>
-    <p><a href="https://b24ec144.github.io/portfolio.github.io/" target="_blank">GitHub Portfolio</a></p>
+  <!-- Test Case 2 -->
+  <div class="card">
+    <h3>Usable Water</h3>
+    <input type="file" accept="image/*">
   </div>
 
-  <div class="team-card">
-    <h3>Thumma Vaishnavi</h3>
-    <p>Email: b24ec114@kitsw.ac.in</p>
-    <p><a href="https://b24ec114.github.io/vaishnavi.github.io/" target="_blank">GitHub Portfolio</a></p>
+  <!-- Test Case 3 -->
+  <div class="card">
+    <h3>Drinking Water</h3>
+    <input type="file" accept="image/*">
   </div>
 
-  <div class="team-card">
-    <h3>Kokkula Poornima</h3>
-    <p>Email: b24ec163@kitsw.ac.in</p>
-    <p><a href="https://b24ec163.github.io/poornima.github/" target="_blank">GitHub Portfolio</a></p>
-  </div>
-
-  <div class="team-card">
-    <h3>Teja Harshini</h3>
-    <p>Email: b24ec148@kitsw.ac.in</p>
-    <p><em>GitHub Portfolio: Coming Soon</em></p>
-  </div>
 </section>
 
-<!-- File Upload Section -->
-<div class="upload-container">
-  <h2>Upload Test Case File</h2>
-  <form action="upload.php" method="POST" enctype="multipart/form-data">
-    <input type="file" name="testfile" required />
-    <br>
-    <button type="submit">Upload File</button>
-  </form>
-</div>
-
+<!-- Footer -->
 <footer>
-  <p>© 2025 Environment Monitoring Team – All rights reserved</p>
+  <p>© 2025 Environmental Monitoring Team</p>
 </footer>
 
 </body>
