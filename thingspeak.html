@@ -8,6 +8,9 @@
   <style>
     body {
       font-size: 20px; /* Large text */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     .container {
@@ -27,11 +30,6 @@
     .card h3 {
       font-size: 24px;
       margin-bottom: 12px;
-    }
-
-    .iframe-container {
-      margin-top: 10px;
-      margin-bottom: 20px;
     }
 
     .card iframe {
@@ -63,8 +61,14 @@
       list-style: none;
       padding: 10px 20px;
       background-color: #333;
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
+      margin: 0;
+    }
+
+    nav.navbar ul li {
+      margin: 0 10px;
+      position: relative;
     }
 
     nav.navbar ul li a {
@@ -77,10 +81,115 @@
       text-decoration: underline;
     }
 
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      top: 100%;
+      left: 0;
+      z-index: 999;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     .dropdown-content a {
-      color: black !important;
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 8px 12px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
     }
 
     footer {
       text-align: center;
-      padding: 
+      padding: 20px;
+      background-color: #f2f2f2;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropbtn">About</a>
+      <div class="dropdown-content">
+        <a href="about_hardware.html">Hardware</a>
+        <a href="about_software.html">Software</a>
+      </div>
+    </li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="thingspeak.html">ThingSpeak</a></li>
+    <li><a href="testcases.html">Test Cases</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="signin.html">Sign In</a></li>
+  </ul>
+</nav>
+
+<!-- Content Section -->
+<section class="container fade-in">
+  <h2 class="page-title">ThingSpeak Data</h2>
+  <p class="subtitle">Live Sensor Readings from IoT Device</p>
+
+  <!-- Temperature -->
+  <div class="card">
+    <h3>Temperature</h3>
+    <iframe src="https://thingspeak.com/channels/3002847/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&type=line&title=Temperature+Readings"></iframe>
+    <p>
+      🔹 Normal: 20°C – 35°C<br>
+      🔺 High (>35°C): Hot weather, possible heat stress<br>
+      🔻 Low (<20°C): Cold climate, might affect sensor accuracy
+    </p>
+  </div>
+
+  <!-- Humidity -->
+  <div class="card">
+    <h3>Humidity</h3>
+    <iframe src="https://thingspeak.com/channels/3002847/charts/2?bgcolor=%23ffffff&color=%2300aaff&dynamic=true&type=line&title=Humidity+Readings"></iframe>
+    <p>
+      🔹 Normal: 30% – 60%<br>
+      🔺 High (>60%): Humid environment, discomfort<br>
+      🔻 Low (<30%): Dry air, potential for respiratory discomfort
+    </p>
+  </div>
+
+  <!-- Gas Concentration -->
+  <div class="card">
+    <h3>Gas Concentration</h3>
+    <iframe src="https://thingspeak.com/channels/3002847/charts/4?bgcolor=%23ffffff&color=%2300cc44&dynamic=true&type=line&title=Gas+Concentration+Levels"></iframe>
+    <p>
+      🔹 Normal: 0 – 300 ppm<br>
+      ⚠️ Moderate (300–600 ppm): Poor air quality<br>
+      🔺 High (>600 ppm): Dangerous gas levels, health risk
+    </p>
+  </div>
+
+  <!-- Turbidity -->
+  <div class="card">
+    <h3>Turbidity</h3>
+    <iframe src="https://thingspeak.com/channels/3002927/charts/3?bgcolor=%23ffffff&color=%23aa00ff&dynamic=true&type=line&title=Turbidity+Level"></iframe>
+    <p>
+      🔹 Low (<5 NTU): Clean water<br>
+      ⚠️ Moderate (5–50 NTU): Acceptable for use but not ideal<br>
+      🔺 High (>50 NTU): Highly turbid, unsafe for consumption
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Environmental Monitoring Team</p>
+</footer>
+
+</body>
+</html>
