@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <title>About</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #e6f7ff;
+      background-color: #dff6ff;
       margin: 0;
       padding: 0;
     }
@@ -60,43 +59,29 @@
       color: #023e8a;
     }
 
-    .hardware-list {
-      list-style: none;
-      padding: 0;
+    ul {
+      padding-left: 0;
     }
 
-    .hardware-item {
-      margin-bottom: 40px;
-      text-align: center;
+    li {
+      list-style: none;
       background-color: #ffffff;
+      margin: 15px 0;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .hardware-item img {
-      max-width: 300px;
-      height: auto;
-      margin-top: 10px;
-      border-radius: 10px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .upload-label {
-      display: block;
-      margin-top: 10px;
-      font-weight: 500;
-      color: #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     input[type="file"] {
-      margin-top: 10px;
+      display: block;
+      margin: 10px auto;
     }
 
-    .preview {
+    .preview img {
+      max-width: 100%;
+      height: auto;
       margin-top: 10px;
+      border-radius: 10px;
     }
 
     footer {
@@ -112,10 +97,7 @@
 
   <nav class="navbar">
     <h2>Environment Monitor</h2>
-    <div class="nav-toggle" onclick="toggleNav()" role="button" tabindex="0" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </div>
-    <ul id="nav-links">
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
@@ -132,29 +114,29 @@
 
   <section>
     <h2>Hardware</h2>
-    <ul class="hardware-list">
-      <li class="hardware-item">
-        <strong>DHT11 – Temperature & Humidity Sensor</strong><br>
+    <ul>
+      <li>
+        <strong>DHT11 – Temperature & Humidity Sensor</strong>
         <input type="file" accept="image/*" onchange="previewImage(this, 'preview1')" />
         <div class="preview" id="preview1"></div>
       </li>
-      <li class="hardware-item">
-        <strong>MQ2 – Gas Sensor</strong><br>
+      <li>
+        <strong>MQ2 – Gas Sensor</strong>
         <input type="file" accept="image/*" onchange="previewImage(this, 'preview2')" />
         <div class="preview" id="preview2"></div>
       </li>
-      <li class="hardware-item">
-        <strong>Turbidity Sensor</strong><br>
+      <li>
+        <strong>Turbidity Sensor</strong>
         <input type="file" accept="image/*" onchange="previewImage(this, 'preview3')" />
         <div class="preview" id="preview3"></div>
       </li>
-      <li class="hardware-item">
-        <strong>ESP8266 Wi-Fi Module</strong><br>
+      <li>
+        <strong>ESP8266 Wi-Fi Module</strong>
         <input type="file" accept="image/*" onchange="previewImage(this, 'preview4')" />
         <div class="preview" id="preview4"></div>
       </li>
-      <li class="hardware-item">
-        <strong>Arduino Uno</strong><br>
+      <li>
+        <strong>Arduino Uno</strong>
         <input type="file" accept="image/*" onchange="previewImage(this, 'preview5')" />
         <div class="preview" id="preview5"></div>
       </li>
@@ -176,20 +158,12 @@
   </footer>
 
   <script>
-    function toggleNav() {
-      document.getElementById("nav-links").classList.toggle("show");
-    }
-
     function previewImage(input, previewId) {
       const file = input.files[0];
       const reader = new FileReader();
       reader.onload = function(e) {
         const img = document.createElement('img');
         img.src = e.target.result;
-        img.style.maxWidth = '300px';
-        img.style.marginTop = '10px';
-        img.style.borderRadius = '10px';
-
         const preview = document.getElementById(previewId);
         preview.innerHTML = '';
         preview.appendChild(img);
@@ -199,5 +173,6 @@
       }
     }
   </script>
+
 </body>
 </html>
