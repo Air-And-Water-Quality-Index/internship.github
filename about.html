@@ -1,90 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>About</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .image-preview {
-      max-width: 200px;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="navbar">
-    <h2>Environment Monitor</h2>
-    <div class="nav-toggle" onclick="toggleNav()" role="button" tabindex="0" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </div>
-    <ul id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="thingspeak.html">ThingSpeak</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="testcases.html">Test Cases</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="signin.html">Sign In</a></li>
-    </ul>
-  </nav>
-
-  <header>
-    <h1>About Our Project</h1>
-  </header>
-
-  <section>
-    <h2>Hardware</h2>
-    <ul>
-      <li>
-        DHT11 – Temperature & Humidity Sensor<br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'dht11-preview')" />
-        <img id="dht11-preview" class="image-preview" alt="Preview of DHT11" />
-      </li>
-      <li>
-        MQ135 – Gas Sensor<br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'mq135-preview')" />
-        <img id="mq135-preview" class="image-preview" alt="Preview of MQ135" />
-      </li>
-      <li>
-        Turbidity Sensor<br>
-        <input type="file" accept="image/*" onchange="previewImage(event, 'turbidity-preview')" />
-        <img id="turbidity-preview" class="image-preview" alt="Preview of Turbidity Sensor" />
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Software</h2>
-    <ul>
-      <li>Arduino IDE</li>
-      <li>ThingSpeak</li>
-      <li>HTML, CSS, JS</li>
-      <li>GitHub</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 Environment Monitoring Team</p>
-  </footer>
-
-  <script>
-    function previewImage(event, id) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.onload = function () {
-        const output = document.getElementById(id);
-        output.src = reader.result;
-      };
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    }
-
-    function toggleNav() {
-      document.getElementById("nav-links").classList.toggle("show");
-    }
-  </script>
-</body>
-</html>
+<section>
+  <h2>Hardware</h2>
+  <ul>
+    <li>
+      DHT11 – Temperature & Humidity Sensor<br>
+      <input type="file" accept="image/*" onchange="previewImage(event, 'dht11-preview')" />
+      <img id="dht11-preview" class="image-preview" alt="Preview of DHT11" />
+    </li>
+    <li>
+      MQ2 – Gas Sensor<br>
+      <input type="file" accept="image/*" onchange="previewImage(event, 'mq2-preview')" />
+      <img id="mq2-preview" class="image-preview" alt="Preview of MQ2" />
+    </li>
+    <li>
+      Turbidity Sensor<br>
+      <input type="file" accept="image/*" onchange="previewImage(event, 'turbidity-preview')" />
+      <img id="turbidity-preview" class="image-preview" alt="Preview of Turbidity Sensor" />
+    </li>
+    <li>
+      ESP8266 Wi-Fi Module<br>
+      <input type="file" accept="image/*" onchange="previewImage(event, 'esp8266-preview')" />
+      <img id="esp8266-preview" class="image-preview" alt="Preview of ESP8266" />
+    </li>
+    <li>
+      Arduino Uno<br>
+      <input type="file" accept="image/*" onchange="previewImage(event, 'arduino-preview')" />
+      <img id="arduino-preview" class="image-preview" alt="Preview of Arduino Uno" />
+    </li>
+  </ul>
+</section>
