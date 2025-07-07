@@ -3,101 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Image Upload Test</title>
+  <title>Test Cases</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      padding: 40px;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
 
-    .upload-block {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      margin: auto;
-      text-align: center;
+    .navbar {
+      background-color: navy;
     }
 
-    .upload-block h2 {
-      margin-bottom: 20px;
-      color: #003366;
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      padding: 10px 20px;
+      justify-content: center;
+      margin: 0;
+      flex-wrap: wrap;
     }
 
-    .upload-block input[type="file"] {
-      margin-bottom: 15px;
+    .navbar ul li {
+      margin: 0 10px;
+      position: relative;
     }
 
-    .upload-block img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 15px;
-      border: 1px solid #ccc;
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 12px;
+      display: block;
+    }
+
+    .navbar ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
       border-radius: 8px;
     }
 
-    .upload-block textarea {
-      margin-top: 20px;
-      width: 100%;
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       padding: 10px;
+      top: 100%;
+      left: 0;
+      z-index: 999;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 8px 12px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+
+    .testcase {
+      margin-bottom: 40px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .testcase h2 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .testcase input[type="file"] {
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    .testcase textarea {
+      width: 80%;
       height: 100px;
       resize: vertical;
-      font-size: 14px;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .preview-img {
+      margin-top: 15px;
+      width: 300px;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    footer {
+      background-color: #eaeaea;
+      color: #333;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <div class="upload-block">
-    <h2>Upload Image + Description</h2>
-    <input type="file" id="imageInput" accept="image/*">
-    <br>
-    <img id="previewImage" alt="Image Preview">
-    <br>
-    <textarea id="imageDesc" placeholder="Enter image description..."></textarea>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">About</a>
+        <div class="dropdown-content">
+          <a href="about_hardware.html">Hardware</a>
+          <a href="about_software.html">Software</a>
+        </div>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="thingspeak.html">ThingSpeak</a></li>
+      <li><a href="testcases.html" class="active">Test Cases</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Test Cases</h1>
+
+    <!-- Test Case 1 -->
+    <div class="testcase" id="tc1">
+      <h2>Test Case 1: Polluted Water</h2>
+      <input type="file" accept="image/*" id="file1">
+      <img id="img1" class="preview-img" />
+      <textarea id="desc1" placeholder="Enter description..."></textarea>
+    </div>
+
+    <!-- Test Case 2 -->
+    <div class="testcase" id="tc2">
+      <h2>Test Case 2: Usable Water</h2>
+      <input type="file" accept="image/*" id="file2">
+      <img id="img2" class="preview-img" />
+      <textarea id="desc2" placeholder="Enter description..."></textarea>
+    </div>
+
+    <!-- Test Case 3 -->
+    <div class="testcase" id="tc3">
+      <h2>Test Case 3: Drinking Water</h2>
+      <input type="file" accept="image/*" id="file3">
+      <img id="img3" class="preview-img" />
+      <textarea id="desc3" placeholder="Enter description..."></textarea>
+    </div>
   </div>
 
+  <footer>
+    <p>© 2025 Environment Monitoring Team – All rights reserved</p>
+  </footer>
+
   <script>
-    const imageInput = document.getElementById('imageInput');
-    const previewImage = document.getElementById('previewImage');
-    const imageDesc = document.getElementById('imageDesc');
+    // Helper to load saved data
+    function loadSavedData() {
+      for (let i = 1; i <= 3; i++) {
+        const imgData = localStorage.getItem('img' + i);
+        const desc = localStorage.getItem('desc' + i);
 
-    // Load from localStorage
-    window.addEventListener('load', () => {
-      const savedImg = localStorage.getItem('uploadedImage');
-      const savedDesc = localStorage.getItem('imageDescription');
+        if (imgData) {
+          document.getElementById('img' + i).src = imgData;
+        }
 
-      if (savedImg) {
-        previewImage.src = savedImg;
+        if (desc) {
+          document.getElementById('desc' + i).value = desc;
+        }
       }
+    }
 
-      if (savedDesc) {
-        imageDesc.value = savedDesc;
+    // Set up handlers
+    function setupHandlers() {
+      for (let i = 1; i <= 3; i++) {
+        // Image upload
+        document.getElementById('file' + i).addEventListener('change', function (event) {
+          const file = event.target.files[0];
+          if (!file) return;
+
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const imageData = e.target.result;
+            document.getElementById('img' + i).src = imageData;
+            localStorage.setItem('img' + i, imageData);
+          };
+          reader.readAsDataURL(file);
+        });
+
+        // Description input
+        document.getElementById('desc' + i).addEventListener('input', function () {
+          localStorage.setItem('desc' + i, this.value);
+        });
       }
-    });
+    }
 
-    // Handle image upload
-    imageInput.addEventListener('change', function () {
-      const file = this.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const imageData = e.target.result;
-        previewImage.src = imageData;
-        localStorage.setItem('uploadedImage', imageData);
-      };
-      reader.readAsDataURL(file);
-    });
-
-    // Save description
-    imageDesc.addEventListener('input', () => {
-      localStorage.setItem('imageDescription', imageDesc.value);
-    });
+    // Initialize everything
+    window.onload = function () {
+      loadSavedData();
+      setupHandlers();
+    };
   </script>
 
 </body>
