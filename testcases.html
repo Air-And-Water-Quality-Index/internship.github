@@ -98,11 +98,6 @@
       margin-bottom: 10px;
     }
 
-    .testcase input[type="file"] {
-      display: block;
-      margin: 0 auto 10px auto;
-    }
-
     .testcase textarea {
       width: 80%;
       height: 100px;
@@ -158,79 +153,28 @@
     <!-- Test Case 1 -->
     <div class="testcase" id="tc1">
       <h2>Test Case 1: Polluted Water</h2>
-      <input type="file" accept="image/*" id="file1">
-      <img id="img1" class="preview-img" />
-      <textarea id="desc1" placeholder="Enter description..."></textarea>
+      <img src="images/polluted.jpg" class="preview-img" alt="Polluted Water" />
+      <textarea id="desc1" placeholder="Enter description...">This is polluted water.</textarea>
     </div>
 
     <!-- Test Case 2 -->
     <div class="testcase" id="tc2">
       <h2>Test Case 2: Usable Water</h2>
-      <input type="file" accept="image/*" id="file2">
-      <img id="img2" class="preview-img" />
-      <textarea id="desc2" placeholder="Enter description..."></textarea>
+      <img src="images/usable.jpg" class="preview-img" alt="Usable Water" />
+      <textarea id="desc2" placeholder="Enter description...">This water is usable but not drinkable.</textarea>
     </div>
 
     <!-- Test Case 3 -->
     <div class="testcase" id="tc3">
       <h2>Test Case 3: Drinking Water</h2>
-      <input type="file" accept="image/*" id="file3">
-      <img id="img3" class="preview-img" />
-      <textarea id="desc3" placeholder="Enter description..."></textarea>
+      <img src="images/drinking.jpg" class="preview-img" alt="Drinking Water" />
+      <textarea id="desc3" placeholder="Enter description...">This is clean drinking water.</textarea>
     </div>
   </div>
 
   <footer>
     <p>© 2025 Environment Monitoring Team – All rights reserved</p>
   </footer>
-
-  <script>
-    // Helper to load saved data
-    function loadSavedData() {
-      for (let i = 1; i <= 3; i++) {
-        const imgData = localStorage.getItem('img' + i);
-        const desc = localStorage.getItem('desc' + i);
-
-        if (imgData) {
-          document.getElementById('img' + i).src = imgData;
-        }
-
-        if (desc) {
-          document.getElementById('desc' + i).value = desc;
-        }
-      }
-    }
-
-    // Set up handlers
-    function setupHandlers() {
-      for (let i = 1; i <= 3; i++) {
-        // Image upload
-        document.getElementById('file' + i).addEventListener('change', function (event) {
-          const file = event.target.files[0];
-          if (!file) return;
-
-          const reader = new FileReader();
-          reader.onload = function (e) {
-            const imageData = e.target.result;
-            document.getElementById('img' + i).src = imageData;
-            localStorage.setItem('img' + i, imageData);
-          };
-          reader.readAsDataURL(file);
-        });
-
-        // Description input
-        document.getElementById('desc' + i).addEventListener('input', function () {
-          localStorage.setItem('desc' + i, this.value);
-        });
-      }
-    }
-
-    // Initialize everything
-    window.onload = function () {
-      loadSavedData();
-      setupHandlers();
-    };
-  </script>
 
 </body>
 </html>
