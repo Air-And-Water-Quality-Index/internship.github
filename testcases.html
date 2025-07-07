@@ -1,178 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Test Cases</title>
+  <meta charset="UTF-8">
+  <title>Water Quality Testing</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 30px;
       background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
     }
-
-    .navbar {
-      background-color: navy;
-    }
-
-    .navbar ul {
-      display: flex;
-      list-style: none;
-      padding: 10px 20px;
-      justify-content: center;
-      margin: 0;
-      flex-wrap: wrap;
-    }
-
-    .navbar ul li {
-      margin: 0 10px;
-      position: relative;
-    }
-
-    .navbar ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 8px 12px;
-      display: block;
-    }
-
-    .navbar ul li a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 10px;
-      top: 100%;
-      left: 0;
-      z-index: 999;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      color: black;
-      text-decoration: none;
-      padding: 8px 12px;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f0f0f0;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
     h1 {
       text-align: center;
-      color: #003366;
-      margin-bottom: 40px;
+      color: #2c3e50;
     }
-
-    .testcase {
-      margin-bottom: 40px;
-      width: 100%;
-      text-align: center;
+    .test-case {
+      background-color: white;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    .testcase h2 {
-      color: #003366;
-      margin-bottom: 10px;
+    .test-case h2 {
+      color: #2980b9;
     }
-
-    .testcase textarea {
-      width: 80%;
-      height: 100px;
-      resize: vertical;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-
-    .preview-img {
-      margin-top: 15px;
-      width: 300px;
+    .test-case img {
+      display: block;
+      max-width: 100%;
       height: auto;
+      margin-top: 15px;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 5px;
     }
-
-    footer {
-      background-color: #eaeaea;
-      color: #333;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      margin-top: 40px;
+    .description {
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        <a href="#">About</a>
-        <div class="dropdown-content">
-          <a href="about_hardware.html">Hardware</a>
-          <a href="about_software.html">Software</a>
-        </div>
-      </li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="thingspeak.html">ThingSpeak</a></li>
-      <li><a href="testcases.html" class="active">Test Cases</a></li>
-    </ul>
-  </nav>
+  <h1>Water Quality Test Results</h1>
 
-  <div class="container">
-    <h1>Test Cases</h1>
-
-    <!-- Test Case 1 -->
-    <div class="testcase" id="tc1">
-      <h2>Test Case 1: Polluted Water</h2>
-      <img src="images/polluted.jpg" class="preview-img" alt="Polluted Water" />
-      <textarea id="desc1" placeholder="Enter description...">This is polluted water.</textarea>
-    </div>
-
-    <!-- Test Case 2 -->
-    <div class="testcase" id="tc2">
-      <h2>Test Case 2: Usable Water</h2>
-      <img src="images/usable.jpg" class="preview-img" alt="Usable Water" />
-      <textarea id="desc2" placeholder="Enter description...">This water is usable but not drinkable.</textarea>
-    </div>
-
-    <!-- Test Case 3 -->
-    <div class="testcase" id="tc3">
-      <h2>Test Case 3: Drinking Water</h2>
-      <img src="images/drinking.jpg" class="preview-img" alt="Drinking Water" />
-      <textarea id="desc3" placeholder="Enter description...">This is clean drinking water.</textarea>
-    </div>
+  <div class="test-case">
+    <h2>Test Case 1: Polluted Water</h2>
+    <p class="description">This sample shows extremely high turbidity values and drastic drops, indicating highly polluted water.</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB..." alt="Polluted Water Chart">
   </div>
 
-  <footer>
-    <p>© 2025 Environment Monitoring Team – All rights reserved</p>
-  </footer>
+  <div class="test-case">
+    <h2>Test Case 2: Usable Water</h2>
+    <p class="description">This water sample has consistent readings in the higher range but without sudden spikes, making it usable for non-drinking purposes.</p>
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Usable Water Chart">
+  </div>
+
+  <div class="test-case">
+    <h2>Test Case 3: Drinking Water</h2>
+    <p class="description">This sample indicates a recovery from low readings to a stable, clean range — suitable for drinking after minor filtration.</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB..." alt="Drinking Water Chart">
+  </div>
 
 </body>
 </html>
