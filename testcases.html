@@ -182,7 +182,6 @@
   </footer>
 
   <script>
-    // Handles uploading and saving image to localStorage
     function handleUpload(event, key) {
       const file = event.target.files[0];
       if (!file) return;
@@ -196,13 +195,11 @@
       reader.readAsDataURL(file);
     }
 
-    // Save textarea description to localStorage
     function saveDescription(key) {
       const desc = document.getElementById('desc' + key.slice(-1)).value;
       localStorage.setItem(key + '_desc', desc);
     }
 
-    // Load images and descriptions from localStorage on page load
     function loadData() {
       ['tc1', 'tc2', 'tc3'].forEach((key, i) => {
         const img = localStorage.getItem(key + '_img');
@@ -215,5 +212,6 @@
 
     window.onload = loadData;
   </script>
+
 </body>
 </html>
