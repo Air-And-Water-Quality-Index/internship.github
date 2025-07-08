@@ -15,6 +15,38 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 32px;
+      margin-top: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
@@ -27,8 +59,6 @@
       <li><a href="team.html">Team</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="testcases.html">Test Cases</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="signin.html">Sign In</a></li>
     </ul>
   </nav>
 
@@ -38,59 +68,34 @@
 
     <div class="card">
       <h3>DHT11 – Temperature & Humidity Sensor</h3>
-      <input type="file" accept="image/*" onchange="previewImage(event, 'img1', 'img1Data')">
-      <img id="img1" class="preview-img" src="" alt="DHT11 Sensor" />
+      <img class="preview-img" src="imgs/dht11.jp.jpeg" alt="DHT11 Sensor" />
     </div>
 
     <div class="card">
       <h3>MQ2 – Gas Sensor</h3>
-      <input type="file" accept="image/*" onchange="previewImage(event, 'img2', 'img2Data')">
-      <img id="img2" class="preview-img" src="" alt="MQ2 Gas Sensor" />
+      <img class="preview-img" src="imgs/mq2.jp.jpeg" alt="MQ2 Gas Sensor" />
     </div>
 
     <div class="card">
       <h3>Turbidity Sensor</h3>
-      <input type="file" accept="image/*" onchange="previewImage(event, 'img3', 'img3Data')">
-      <img id="img3" class="preview-img" src="" alt="Turbidity Sensor" />
+      <img class="preview-img" src="imgs/turbidity.jp.jpeg" alt="Turbidity Sensor" />
     </div>
 
     <div class="card">
       <h3>ESP8266 Wi-Fi Module</h3>
-      <input type="file" accept="image/*" onchange="previewImage(event, 'img4', 'img4Data')">
-      <img id="img4" class="preview-img" src="" alt="ESP8266 WiFi Module" />
+      <img class="preview-img" src="imgs/esp8266.jp.jpeg" alt="ESP8266 WiFi Module" />
     </div>
 
     <div class="card">
       <h3>Arduino Uno</h3>
-      <input type="file" accept="image/*" onchange="previewImage(event, 'img5', 'img5Data')">
-      <img id="img5" class="preview-img" src="" alt="Arduino Uno Board" />
+      <img class="preview-img" src="imgs/arduino.jp.jpeg" alt="Arduino Uno Board" />
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Environment Monitoring Team</p>
   </footer>
 
-  <script>
-    function previewImage(event, imgId, storageKey) {
-      const reader = new FileReader();
-      reader.onload = function () {
-        const dataURL = reader.result;
-        document.getElementById(imgId).src = dataURL;
-        localStorage.setItem(storageKey, dataURL);
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
-
-    window.onload = function () {
-      const ids = ['img1', 'img2', 'img3', 'img4', 'img5'];
-      ids.forEach((id) => {
-        const saved = localStorage.getItem(id + 'Data');
-        if (saved) {
-          document.getElementById(id).src = saved;
-        }
-      });
-    };
-  </script>
 </body>
 </html>
