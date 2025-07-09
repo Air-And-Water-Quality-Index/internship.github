@@ -1,19 +1,17 @@
-// Toggle dropdown on click for "About"
-document.addEventListener("DOMContentLoaded", function () {
-  const dropbtn = document.querySelector(".dropbtn");
-  const dropdownContent = document.querySelector(".dropdown-content");
+function toggleDropdown() {
+  const dropdown = document.getElementById('dropdownContent');
+  dropdown.classList.toggle('show');
+}
 
-  dropbtn.addEventListener("click", function (e) {
-    e.preventDefault(); // Prevent link action if <a href="#"> is used
-    dropdownContent.classList.toggle("show");
-  });
-
-  // Optional: close the dropdown if clicked outside
-  window.addEventListener("click", function (e) {
-    if (!e.target.matches('.dropbtn')) {
-      if (dropdownContent.classList.contains("show")) {
-        dropdownContent.classList.remove("show");
+// Optional: Close dropdown if clicking outside
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
       }
     }
-  });
-});
+  }
+};
