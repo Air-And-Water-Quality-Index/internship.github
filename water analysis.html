@@ -10,28 +10,48 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      padding-top: 60px; /* leave space for fixed navbar */
+      padding-top: 110px; /* Space for brand + navbar */
       background-color: #f4f4f4;
     }
+
+    .brand-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      z-index: 1100;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
     .navbar {
       overflow: hidden;
       background-color: #333;
       position: fixed;
-      top: 0;
+      top: 50px; /* Below the brand-header */
       left: 0;
       right: 0;
       width: 100%;
       z-index: 1000;
     }
+
     .navbar ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
     }
+
     .navbar li {
       margin: 0;
     }
+
     .navbar a {
       display: block;
       color: #f2f2f2;
@@ -39,26 +59,32 @@
       padding: 14px 16px;
       text-decoration: none;
     }
-    .navbar a:hover, .navbar .active {
+
+    .navbar a:hover,
+    .navbar .active {
       background-color: #555;
       color: white;
     }
+
     header h1 {
       text-align: center;
       color: #2c3e50;
       margin: 20px 0;
     }
+
     .water-analysis {
       background-color: white;
       padding: 20px;
       margin: 20px auto;
       border-radius: 10px;
       max-width: 800px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
     .water-analysis h2 {
       color: #2980b9;
     }
+
     .water-analysis img {
       display: block;
       max-width: 100%;
@@ -67,6 +93,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
     .description {
       margin-top: 10px;
     }
@@ -74,43 +101,51 @@
 </head>
 <body>
 
-<nav class="navbar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li class="dropdown">
-      <a href="#" class="dropbtn">About</a>
-      <div class="dropdown-content">
-        <a href="about_hardware.html">Hardware</a>
-        <a href="about_software.html">Software</a>
-      </div>
-    </li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="thingspeak.html">ThingSpeak</a></li>
-    <li><a href="water analysis.html" class="active">Water Analysis</a></li>
-  </ul>
-</nav>
+  <!-- Brand Header -->
+  <div class="brand-header">
+    <h1>AGILE ACHIEVERS</h1>
+  </div>
 
-<header>
-  <h1>Water Quality Test Results</h1>
-</header>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">About</a>
+        <div class="dropdown-content">
+          <a href="about_hardware.html">Hardware</a>
+          <a href="about_software.html">Software</a>
+        </div>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="thingspeak.html">ThingSpeak</a></li>
+      <li><a href="water analysis.html" class="active">Water Analysis</a></li>
+    </ul>
+  </nav>
 
-<div class="water-analysis">
-  <h2>Case 1: Polluted Water</h2>
-  <p class="description">This sample shows extremely high turbidity values and drastic drops, indicating highly polluted water.</p>
-  <img src="Screenshot 2025-07-07 123946.png" alt="Polluted Water Chart">
-</div>
+  <!-- Page Header -->
+  <header>
+    <h1>Water Quality Test Results</h1>
+  </header>
 
-<div class="water-analysis">
-  <h2>Case 2: Usable Water</h2>
-  <p class="description">This water sample has consistent readings in the higher range but without sudden spikes, making it usable for non-drinking purposes.</p>
-  <img src="WhatsApp Image 2025-07-07 at 12.45.08 PM.jpeg" alt="Usable Water Chart">
-</div>
+  <!-- Water Analysis Sections -->
+  <div class="water-analysis">
+    <h2>Case 1: Polluted Water</h2>
+    <p class="description">This sample shows extremely high turbidity values and drastic drops, indicating highly polluted water.</p>
+    <img src="Screenshot 2025-07-07 123946.png" alt="Polluted Water Chart">
+  </div>
 
-<div class="water-analysis">
-  <h2>Case 3: Drinking Water</h2>
-  <p class="description">This sample indicates a recovery from low readings to a stable, clean range — suitable for drinking after minor filtration.</p>
-  <img src="Screenshot 2025-07-07 124820.png" alt="Drinking Water Chart">
-</div>
+  <div class="water-analysis">
+    <h2>Case 2: Usable Water</h2>
+    <p class="description">This water sample has consistent readings in the higher range but without sudden spikes, making it usable for non-drinking purposes.</p>
+    <img src="WhatsApp Image 2025-07-07 at 12.45.08 PM.jpeg" alt="Usable Water Chart">
+  </div>
+
+  <div class="water-analysis">
+    <h2>Case 3: Drinking Water</h2>
+    <p class="description">This sample indicates a recovery from low readings to a stable, clean range — suitable for drinking after minor filtration.</p>
+    <img src="Screenshot 2025-07-07 124820.png" alt="Drinking Water Chart">
+  </div>
 
 </body>
 </html>
