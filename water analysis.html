@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Water Analysis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Quality Testing</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Reset + Base styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      padding-top: 120px; /* Nudging header + navbar down */
+      background-color: #f4f4f4;
     }
 
-    /* AGILE ACHIEVERS header */
+    /* AGILE ACHIEVERS Heading */
     .brand-header {
       position: fixed;
-      top: 0;
+      top: 10px; /* Shifted down slightly from very top */
       width: 100%;
-      background-color: #25476a; /* Same navy blue */
+      background-color: #25476a; /* Softer navy */
       color: white;
       text-align: center;
       padding: 16px 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 28px;
       font-weight: bold;
       letter-spacing: 2px;
@@ -29,15 +31,16 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    /* Navbar styles */
+    /* Navigation Bar */
     .navbar {
-      background-color: #25476a; /* Matching color */
       overflow: hidden;
+      background-color: #25476a;
       position: fixed;
-      top: 64px; /* placed just below the brand header */
+      top: 72px; /* Exactly follows the .brand-header at top: 10px + height */
+      left: 0;
+      right: 0;
       width: 100%;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     .navbar ul {
@@ -45,76 +48,60 @@
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      padding-left: 20px;
     }
 
-    .navbar ul li {
-      padding: 14px 20px;
+    .navbar li {
+      margin-right: 20px;
     }
 
-    .navbar ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar ul li a:hover,
-    .navbar ul li a.active {
-      color: #ffd700;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 999;
-    }
-
-    .dropdown:hover .dropdown-content {
+    .navbar a {
       display: block;
-    }
-
-    .dropdown-content a {
-      color: #25476a;
+      color: white;
+      text-align: center;
       padding: 12px 16px;
       text-decoration: none;
-      display: block;
+      font-size: 16px;
     }
 
-    .dropdown-content a:hover {
-      background-color: #ddd;
+    .navbar a:hover,
+    .navbar .active {
+      background-color: #1c3855;
+      color: white;
     }
 
-    /* Content area */
-    .content {
-      padding: 140px 20px 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .content h2 {
+    /* Page Heading */
+    header h1 {
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 20px;
       color: #25476a;
+      margin: 20px 0;
     }
 
-    .content p {
-      font-size: 20px;
-      line-height: 1.6;
-      text-align: justify;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
+    .water-analysis {
+      background-color: white;
       padding: 20px;
-      background-color: #eaeaea;
-      font-size: 18px;
-      margin-top: 60px;
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .water-analysis h2 {
+      color: #2980b9;
+    }
+
+    .water-analysis img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .description {
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -125,39 +112,42 @@
     AGILE ACHIEVERS
   </div>
 
-  <!-- Navbar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropbtn">About</a>
-        <div class="dropdown-content">
-          <a href="about_hardware.html">Hardware</a>
-          <a href="about_software.html">Software</a>
-        </div>
-      </li>
+      <li><a href="about_hardware.html">Hardware</a></li>
+      <li><a href="about_software.html">Software</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="thingspeak.html">ThingSpeak</a></li>
       <li><a href="water analysis.html" class="active">Water Analysis</a></li>
     </ul>
   </nav>
 
-  <!-- Page Content -->
-  <div class="content">
-    <h2>Water Quality Analysis</h2>
-    <p>
-      Our water analysis module monitors key parameters such as turbidity, pH levels, dissolved oxygen, and other critical indicators to ensure water quality meets safety standards. 
-      The data collected from sensors is processed and visualized to help in real-time decision making.
-    </p>
-    <p>
-      This page is part of our environmental monitoring system, enabling communities and industries to maintain safe and sustainable water practices.
-    </p>
+  <!-- Page Header -->
+  <header>
+    <h1>Water Quality Test Results</h1>
+  </header>
+
+  <!-- Water Analysis Sections -->
+  <div class="water-analysis">
+    <h2>Case 1: Polluted Water</h2>
+    <p class="description">This sample shows extremely high turbidity values and drastic drops, indicating highly polluted water.</p>
+    <img src="Screenshot 2025-07-07 123946.png" alt="Polluted Water Chart">
   </div>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Environmental Monitoring Team
-  </footer>
+  <div class="water-analysis">
+    <h2>Case 2: Usable Water</h2>
+    <p class="description">This water sample has consistent readings in the higher range but without sudden spikes, making it usable for non-drinking purposes.</p>
+    <img src="WhatsApp Image 2025-07-07 at 12.45.08 PM.jpeg" alt="Usable Water Chart">
+  </div>
 
+  <div class="water-analysis">
+    <h2>Case 3: Drinking Water</h2>
+    <p class="description">This sample indicates a recovery from low readings to a stable, clean range — suitable for drinking after minor filtration.</p>
+    <img src="Screenshot 2025-07-07 124820.png" alt="Drinking Water Chart">
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
