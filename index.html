@@ -1,117 +1,57 @@
-/* GENERAL STYLING */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f8fb;
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Air & Water Quality Monitoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* NAVBAR */
-.navbar {
-  background-color: #1f1f7a;
-  overflow: hidden;
-}
+  <!-- Navbar -->
+  <nav class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
 
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+    <li class="dropdown">
+      <a href="#" class="dropbtn">About</a>
+      <div class="dropdown-content">
+        <a href="about_hardware.html">Hardware</a>
+        <a href="about_software.html">Software</a>
+      </div>
+    </li>
 
-.navbar li {
-  float: left;
-  position: relative; /* Important for dropdown */
-}
+    <li><a href="team.html">Team</a></li>
+    <li><a href="thingspeak.html">ThingSpeak</a></li>
+    <li><a href="water analysis.html">Water Analysis</a></li>
+  </ul>
+</nav>
+  <!-- Container -->
+  <div class="container">
+    <h1 class="page-title">Air & Water Quality Monitoring</h1>
+    <p class="subtitle">Monitoring Environmental Conditions Using Sensors & IoT</p>
 
-.navbar li a, .dropbtn {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    <div class="card">
+      <h3>Problem Statement</h3>
+      <p>Air and water quality index and environment monitoring.</p>
+    </div>
 
-.navbar li a:hover,
-.navbar li a.active,
-.navbar .dropdown:hover .dropbtn {
-  background-color: #4a4aff;
-}
+    <div class="card">
+      <h3>Our Solution</h3>
+      <p>We prepared a prototype using sensors like DHT11, Turbidity Sensor, and MQ135 to measure temperature, humidity, turbidity of water, and gas concentrations. The data is collected using Arduino and ESP8266 and pushed to the cloud using ThingSpeak.</p>
+    </div>
 
-/* Dropdown Content */
-.navbar .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #1f1f7a;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-  top: 48px; /* Adjust this if the dropdown overlaps */
-}
+    <div class="card">
+      <h3>Uniqueness</h3>
+      <p>This project combines real-time monitoring, IoT integration, and cloud-based visualization to create a low-cost and effective environmental tracking system.</p>
+    </div>
+  </div>
 
-.navbar .dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Environmental Monitoring Team</p>
+  </footer>
 
-.navbar .dropdown-content a:hover {
-  background-color: #4a4aff;
-}
-
-/* Show dropdown on hover */
-.navbar .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* MAIN SECTION */
-.container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 40px auto;
-}
-
-.page-title {
-  text-align: center;
-  color: #003366;
-  font-size: 28px;
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 40px;
-}
-
-/* INFO CARDS */
-.card {
-  background-color: #fff;
-  padding: 25px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-  text-align: center;
-  color: #0057e7;
-  margin-bottom: 15px;
-}
-
-.card p {
-  text-align: center;
-  font-size: 14px;
-  color: #222;
-  margin-top: 15px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 15px;
-  background-color: #eaeaea;
-  color: #333;
-  font-size: 14px;
-}
+  <script src="script.js"></script>
+</body>
+</html>\
