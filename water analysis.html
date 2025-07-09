@@ -10,7 +10,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      padding-top: 90px; /* Smaller top padding for header and navbar */
+      padding-top: 110px; /* Adjusted for larger header/navbar */
       background-color: #f4f4f4;
     }
 
@@ -19,12 +19,12 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #1a1a1a;
-      color: #ffffff;
+      background-color: navy;
+      color: white;
       text-align: center;
-      padding: 8px 0; /* Reduced padding */
+      padding: 16px 0; /* Increased padding */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 22px; /* Slightly smaller font */
+      font-size: 28px; /* Increased font size */
       font-weight: bold;
       letter-spacing: 2px;
       z-index: 1100;
@@ -34,9 +34,9 @@
     /* Navigation Bar */
     .navbar {
       overflow: hidden;
-      background-color: #333;
+      background-color: navy;
       position: fixed;
-      top: 40px; /* Comes right after the brand-header */
+      top: 58px; /* Adjusted for taller brand-header */
       left: 0;
       right: 0;
       width: 100%;
@@ -48,24 +48,26 @@
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start; /* Align to the left */
+      padding-left: 20px; /* Space from left corner */
     }
 
     .navbar li {
-      margin: 0;
+      margin-right: 20px; /* Space between items */
     }
 
     .navbar a {
       display: block;
-      color: #f2f2f2;
+      color: white;
       text-align: center;
       padding: 12px 16px;
       text-decoration: none;
+      font-size: 16px;
     }
 
     .navbar a:hover,
     .navbar .active {
-      background-color: #555;
+      background-color: #003366; /* Slightly darker navy on hover */
       color: white;
     }
 
