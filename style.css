@@ -117,3 +117,11 @@ footer {
   color: #333;
   font-size: 14px;
 }
+/* Show class for dropdown toggle */
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content.show {
+  display: block;
+}
