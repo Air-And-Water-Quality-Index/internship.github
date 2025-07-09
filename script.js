@@ -1,9 +1,8 @@
 function toggleDropdown() {
-  const dropdown = document.getElementById('dropdownContent');
+  const dropdown = document.querySelector('.dropdown .dropdown-content');
   dropdown.classList.toggle('show');
 }
 
-// Optional: Close dropdown if clicking outside
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     const dropdowns = document.getElementsByClassName("dropdown-content");
