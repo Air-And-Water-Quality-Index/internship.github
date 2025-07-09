@@ -1,15 +1,19 @@
-function toggleDropdown(event) {
-  // Close any open dropdowns first
-  document.querySelectorAll('.dropdown').forEach(function(drop) {
-    if (drop !== event.target.closest('.dropdown')) {
-      drop.classList.remove('show');
-    }
+// Toggle dropdown on click for "About"
+document.addEventListener("DOMContentLoaded", function () {
+  const dropbtn = document.querySelector(".dropbtn");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  dropbtn.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent link action if <a href="#"> is used
+    dropdownContent.classList.toggle("show");
   });
 
-  // Toggle current dropdown
-  const dropdown = event.target.closest('.dropdown');
-  dropdown.classList.toggle('show');
-
-  // Prevent link jump
-  event.preventDefault();
-}
+  // Optional: close the dropdown if clicked outside
+  window.addEventListener("click", function (e) {
+    if (!e.target.matches('.dropbtn')) {
+      if (dropdownContent.classList.contains("show")) {
+        dropdownContent.classList.remove("show");
+      }
+    }
+  });
+});
