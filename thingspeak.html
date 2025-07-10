@@ -210,6 +210,14 @@
 <footer>
   <p>© 2025 Environmental Monitoring Team</p>
 </footer>
+<script>
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+    });
+</script>
 
+<script src="script.js"></script> <!-- Keep this for dropdown and other navbar actions -->
 </body>
 </html>
