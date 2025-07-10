@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Hardware</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .preview-img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 32px;
+      margin-top: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+      <a href="#" class="dropbtn">About</a>
+      <div class="dropdown-content">
+        <a href="about_hardware.html">Hardware</a>
+        <a href="about_software.html">Software</a>
+      </div>
+    </li>
+
+    <li><a href="team.html">Team</a></li>
+    <li><a href="thingspeak.html">ThingSpeak</a></li>
+    <li><a href="water analysis.html">Water Analysis</a></li>
+  </ul>
+</nav>
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="page-title">Hardware Used</h1>
+
+    <div class="card">
+      <h3>DHT11 – Temperature & Humidity Sensor</h3>
+      <p> Used to monitor the ambient temperature and humidity levels for environmental awareness and health.</p>
+      <img class="preview-img" src="dht11.jpg.jpeg" alt="DHT11 Sensor" />
+    </div>
+
+    <div class="card">
+      <h3>MQ2 – Gas Sensor</h3>
+      <p> Detects the presence of gases like LPG, methane, and smoke to ensure air quality and safety.</p>
+      <img class="preview-img" src="mq2.jpg.jpeg" alt="MQ2 Gas Sensor" />
+    </div>
+
+    <div class="card">
+      <h3>Turbidity Sensor</h3>
+      <p> Measures the cloudiness of water, helping detect water quality and contamination levels.</p>
+      <img class="preview-img" src="turbidity.jpg.jpeg" alt="Turbidity Sensor" />
+    </div>
+
+    <div class="card">
+      <h3>ESP8266 Wi-Fi Module</h3>
+      <p> Provides wireless connectivity for transmitting sensor data to online platforms like ThingSpeak.</p>
+      <img class="preview-img" src="esp8266.jpg.jpeg" alt="ESP8266 WiFi Module" />
+    </div>
+
+    <div class="card">
+      <h3>Arduino Uno</h3>
+      <p> Acts as the main microcontroller to collect sensor data and coordinate communication and control.</p>
+      <img class="preview-img" src="arduino.jpg.jpeg" alt="Arduino Uno Board" />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Environment Monitoring Team</p>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>
