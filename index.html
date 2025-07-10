@@ -8,24 +8,8 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-
-    <li class="dropdown">
-<a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown()">About</a>
-      <div class="dropdown-content">
-        <a href="about_hardware.html">Hardware</a>
-        <a href="about_software.html">Software</a>
-      </div>
-    </li>
-
-    <li><a href="team.html">Team</a></li>
-    <li><a href="thingspeak.html">ThingSpeak</a></li>
-    <li><a href="water analysis.html">Water Analysis</a></li>
-  </ul>
-</nav>
+<div id="navbar-container"></div>
+  
   <!-- Container -->
   <div class="container">
     <h1 class="page-title">Air & Water Quality Monitoring</h1>
@@ -53,5 +37,14 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+    });
+</script>
+
+<script src="script.js"></script> <!-- Keep this for dropdown and other navbar actions -->
 </body>
 </html>\
