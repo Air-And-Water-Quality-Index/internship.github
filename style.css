@@ -10,6 +10,7 @@ body {
 .navbar {
   background-color: #1f1f7a;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .navbar ul {
@@ -20,15 +21,17 @@ body {
 
 .navbar li {
   float: left;
-  position: relative; /* Important for dropdown */
+  position: relative;
 }
 
 .navbar li a, .dropbtn {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 20px;
   text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .navbar li a:hover,
@@ -41,18 +44,6 @@ body {
 .navbar .dropdown {
   float: left;
   overflow: hidden;
-  position: relative;
-}
-
-.navbar .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  cursor: pointer;
 }
 
 .navbar .dropdown-content {
@@ -63,13 +54,12 @@ body {
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
 }
-/* This class will be toggled via JavaScript */
+
 .navbar .dropdown-content.show {
   display: block;
 }
 
 .navbar .dropdown-content a {
-  float: none;
   color: white;
   padding: 12px 16px;
   text-decoration: none;
@@ -81,27 +71,25 @@ body {
   background-color: #4a4aff;
 }
 
-.navbar .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* MAIN SECTION */
+/* CONTAINER */
 .container {
   width: 90%;
   max-width: 1000px;
   margin: 40px auto;
 }
 
+/* HEADINGS */
 .page-title {
   text-align: center;
   color: #003366;
   font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
   text-align: center;
   font-size: 16px;
-  color: #444;
+  color: #555;
   margin-bottom: 40px;
 }
 
@@ -110,28 +98,89 @@ body {
   background-color: #fff;
   padding: 25px;
   margin-bottom: 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
 }
 
 .card h3 {
   text-align: center;
   color: #0057e7;
   margin-bottom: 15px;
+  font-size: 22px;
 }
 
-.card p {
+.card p,
+.graph-description {
   text-align: center;
   font-size: 14px;
-  color: #222;
+  color: #333;
   margin-top: 15px;
+  line-height: 1.5;
+}
+
+/* IFRAME STYLING */
+.card iframe {
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+  max-width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* TEAM PAGE */
+.team-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.team-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card h3 {
+  margin-top: 10px;
+  color: #003366;
+}
+
+.team-card p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.team-card a {
+  text-decoration: none;
+  color: #0057e7;
+  font-weight: bold;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 15px;
   background-color: #eaeaea;
   color: #333;
+  text-align: center;
+  padding: 15px;
   font-size: 14px;
+  margin-top: 40px;
 }
