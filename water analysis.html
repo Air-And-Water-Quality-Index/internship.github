@@ -5,138 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
   <title>Water Quality Testing</title>  
   <link rel="stylesheet" href="style.css">  
-  <style>  
-    body {  
-      font-family: Arial, sans-serif;  
-      margin: 0;  
-      padding: 0;  
-      padding-top: 140px; /* Adjusted for header + navbar */  
-      background-color: #f5f8fb; /* Unified with other pages */  
-    }  
-  
-    .brand-header {  
-      position: fixed;  
-      top: 0;  
-      width: 100%;  
-      background-color: #0a1f44;  
-      color: white;  
-      text-align: center;  
-      padding: 20px 0;  
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-      font-size: 30px;  
-      font-weight: bold;  
-      letter-spacing: 2px;  
-      z-index: 1100;  
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);  
-    }  
-  
-    .navbar {  
-      overflow: hidden;  
-      background-color: #173a6b;  
-      position: fixed;  
-      top: 70px;  
-      left: 0;  
-      right: 0;  
-      width: 100%;  
-      z-index: 1000;  
-    }  
-  
-    .navbar ul {  
-      list-style: none;  
-      margin: 0;  
-      padding: 0;  
-      display: flex;  
-      justify-content: flex-start;  
-      padding-left: 20px;  
-    }  
-  
-    .navbar li {  
-      margin-right: 20px;  
-      position: relative;  
-    }  
-  
-    .navbar a {  
-      display: block;  
-      color: white;  
-      text-align: center;  
-      padding: 16px 20px;  
-      text-decoration: none;  
-      font-size: 16px;  
-    }  
-  
-    .navbar a:hover,  
-    .navbar .active {  
-      background-color: #102c52;  
-    }  
-  
-    .dropdown-content {  
-      display: none;  
-      position: absolute;  
-      background-color: #1f1f7a;  
-      min-width: 160px;  
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);  
-      z-index: 1;  
-    }  
-  
-    .dropdown:hover .dropdown-content {  
-      display: block;  
-    }  
-  
-    .dropdown-content a {  
-      color: white;  
-      padding: 12px 16px;  
-      text-decoration: none;  
-      display: block;  
-      text-align: left;  
-    }  
-  
-    .dropdown-content a:hover {  
-      background-color: #4a4aff;  
-    }  
-  
-    header h1 {  
-      text-align: center;  
-      color: #25476a;  
-      margin: 20px 0;  
-    }  
-  
-    .water-analysis {  
-      background-color: white;  
-      padding: 20px;  
-      margin: 20px auto;  
-      border-radius: 10px;  
-      max-width: 800px;  
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
-    }  
-  
-    .water-analysis h2 {  
-      color: #2980b9;  
-    }  
-  
-    .water-analysis img {  
-      display: block;  
-      max-width: 100%;  
-      height: auto;  
-      margin-top: 15px;  
-      border: 1px solid #ccc;  
-      border-radius: 5px;  
-    }  
-  
-    .description {  
-      margin-top: 10px;  
-    }  
-  
-    footer {  
-      text-align: center;  
-      padding: 20px;  
-      background-color: #eaeaea;  
-      font-size: 14px;  
-      color: #333;  
-      margin-top: 40px;  
-    }  
-  </style>  
-</head>  
-<body>  
+  <style>
+    body {
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #1f1f7a;
+      overflow: hidden;
+    }
+
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar li {
+      position: relative;
+    }
+
+    .navbar a {
+      display: block;
+      color: white;
+      padding: 16px 20px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .navbar a:hover,
+    .navbar .active {
+      background-color: #102c52;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #173a6b;
+      min-width: 160px;
+      z-index: 1;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #102c52;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .card iframe {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 600px;
+      max-width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card iframe:hover {
+      transform: scale(1.01);
+    }
+
+    .page-title {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: left;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .graph-description {
+      text-align: left;
+      font-size: 18px;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+      font-size: 18px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      .subtitle,
+      .graph-description {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
   
   
   <div id="navbar-container"></div>
@@ -170,14 +175,6 @@
     <p>© 2025 Environment Monitoring Team</p>  
   </footer>  
   
-  <script>
-  fetch('navbar.html')
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('navbar-container').innerHTML = data;
-    });
-</script>
-
 <script src="script.js"></script> <!-- Keep this for dropdown and other navbar actions -->
 </body>  
 </html>
